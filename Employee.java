@@ -1,4 +1,4 @@
-package DART Game rental store software;
+package dit042;
 
 import java.util.*;
 
@@ -15,8 +15,9 @@ public class Employee {
 
     /**
      * 
-     */
+
     public object ArrayList employees;
+     */
 
     /**
      * 
@@ -92,9 +93,10 @@ public class Employee {
     /**
      * @param totalSalary 
      * @param netSalary
-     */
+
     public void salary(void totalSalary, void netSalary) {
         // TODO implement here
     }
+     */
 
 }

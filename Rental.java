@@ -1,4 +1,4 @@
-package DART Game rental store software;
+package dit042;
 
 import java.util.*;
 
@@ -19,9 +19,9 @@ public class Rental {
     public double totalProfit;
 
     /**
-     * 
-     */
-    public object ArrayList rental;
+     *
+     *
+    public object ArrayList rental; */
 
     /**
      * 
@@ -39,9 +39,10 @@ public class Rental {
 
     /**
      * @param rentProfit
-     */
+
     public void rentProfit(void rentProfit) {
         // TODO implement here
     }
+     */
 
 }

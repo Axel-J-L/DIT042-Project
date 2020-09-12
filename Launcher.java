@@ -1,6 +1,7 @@
-package DART Game rental store software;
+package dit042;
 
 import java.util.*;
+import java.lang.*;
 
 /**
  * 
@@ -16,14 +17,16 @@ public class Launcher {
     /**
      * 
      */
-    public void session;
 
 
     /**
      * 
      */
-    public void main() {
+    public static void main(String[] args) {
         // TODO implement here
+        DartController session = new DartController();
+
+        session.DartController();
     }
 
 }

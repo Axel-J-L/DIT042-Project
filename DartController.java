@@ -1,6 +1,9 @@
-package DART Game rental store software;
+package dit042;
 // testing push (drake)
+
+import java.io.*;
 import java.util.*;
+import java.lang.*;
 
 /**
  * 
@@ -10,8 +13,14 @@ public class DartController {
     /**
      * Default constructor
      */
-    public DartController() {
+
+    public static void DartController() {
+
+        System.out.println("Hello");
+
     }
+
+
 
     /**
      * 

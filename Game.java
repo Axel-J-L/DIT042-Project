@@ -1,4 +1,4 @@
-package DART Game rental store software;
+package dit042;
 
 import java.util.*;
 
@@ -15,8 +15,8 @@ public class Game {
 
     /**
      * 
-     */
-    public object ArrayList games;
+
+    public object ArrayList games; */
 
     /**
      * 
@@ -31,12 +31,12 @@ public class Game {
     /**
      * 
      */
-    public void genre;
+    String genre;
 
     /**
      * 
      */
-    public int rentFee;
+    int rentFee;
 
     /**
      * 

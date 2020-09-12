@@ -1,4 +1,4 @@
-package DART Game rental store software;
+package dit042;
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ public class Helper {
      * @param char 
      * @param string
      */
-    public void getInput(void String message, void int, void char, void string) {
+    public void getInput() {
         // TODO implement here
     }
 

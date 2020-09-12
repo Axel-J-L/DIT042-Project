@@ -40,7 +40,8 @@ public class DartController {
      */
     public String menuOption;
 
-
+    String cEmployee;                       //create employee
+    String rEmployee;                       //remove employee
 
 
     /**

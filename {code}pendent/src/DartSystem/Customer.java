@@ -1,23 +1,27 @@
-package dit042;
+package DartSystem;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Manager {
+public class Customer {
 
     /**
      * Default constructor
      */
-    public Manager() {
+    public Customer() {
     }
 
     /**
      * 
      */
-    public String password;
+    String customerId;
 
+    /**
+     * 
+     */
+    String name;
 
 
 
@@ -25,21 +29,21 @@ public class Manager {
     /**
      * 
      */
-    public void managerMenu() {
+    public void customerMenu() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void authManager() {
+    public void addCustomer() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void displaySalary() {
+    public void removeCustomer() {
         // TODO implement here
     }
 

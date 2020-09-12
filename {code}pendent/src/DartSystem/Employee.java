@@ -1,4 +1,4 @@
-package dit042;
+package DartSystem;
 
 import java.util.*;
 
@@ -58,7 +58,7 @@ public class Employee {
      */
     public void employeeMenu() {
         // TODO implement here
-        System.out.println("Employee Menu");
+        System.out.println("DartSystem.Employee Menu");
         System.out.println("1. Enter frejioer");
     }
 

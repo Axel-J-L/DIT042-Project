@@ -1,5 +1,4 @@
-package dit042;
-// testing push (drake)
+package DartSystem;// testing push (drake)
 
 import java.io.*;
 import java.util.*;
@@ -20,9 +19,9 @@ public class DartController {
         System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
         System.out.println(" ");
         System.out.println("Please specify your role by entering one of the options given:");
-        System.out.println("1. Enter \"M\" for Manager ");
-        System.out.println("2. Enter \"E\" for Employee");
-        System.out.println("3. Enter \"C\" for Customer");
+        System.out.println("1. Enter \"M\" for DartSystem.Manager ");
+        System.out.println("2. Enter \"E\" for DartSystem.Employee");
+        System.out.println("3. Enter \"C\" for DartSystem.Customer");
         System.out.println("4. Enter \"X\" to exit system");
                 
 

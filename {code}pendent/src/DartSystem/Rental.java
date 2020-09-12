@@ -1,50 +1,48 @@
-package dit042;
+package DartSystem;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Customer {
+public class Rental {
 
     /**
      * Default constructor
      */
-    public Customer() {
+    public Rental() {
     }
 
     /**
      * 
      */
-    String customerId;
+    public double totalProfit;
+
+    /**
+     *
+     *
+    public object ArrayList rental; */
 
     /**
      * 
      */
-    String name;
-
-
-
-
-    /**
-     * 
-     */
-    public void customerMenu() {
+    public void rentGame() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void addCustomer() {
+    public void returnGame() {
         // TODO implement here
     }
 
     /**
-     * 
-     */
-    public void removeCustomer() {
+     * @param rentProfit
+
+    public void rentProfit(void rentProfit) {
         // TODO implement here
     }
+     */
 
 }

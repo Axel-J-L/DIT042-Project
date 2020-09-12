@@ -1,4 +1,5 @@
-package DartSystem;
+package dit042;
+// testing push (drake)
 
 import java.io.*;
 import java.util.*;
@@ -23,8 +24,8 @@ public class DartController {
         System.out.println("2. Enter \"E\" for Employee");
         System.out.println("3. Enter \"C\" for Customer");
         System.out.println("4. Enter \"X\" to exit system");
-        Helper input = new Helper();
-//        Helper.getInput();
+                
+
     }
 
 
@@ -39,8 +40,7 @@ public class DartController {
      */
     public String menuOption;
 
-    String cEmployee;                       //create employee
-    String rEmployee;                       //remove employee
+
 
 
     /**

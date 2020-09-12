@@ -1,49 +1,45 @@
-package DartSystem;
+package dit042;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Customer {
+public class Manager {
 
     /**
      * Default constructor
      */
-    public Customer() {
+    public Manager() {
     }
 
     /**
      * 
      */
-    String customerId;
+    public String password;
+
+
+
+
 
     /**
      * 
      */
-    String name;
-
-
-
-
-    /**
-     * 
-     */
-    public void customerMenu() {
+    public void managerMenu() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void addCustomer() {
+    public void authManager() {
         // TODO implement here
     }
 
     /**
      * 
      */
-    public void removeCustomer() {
+    public void displaySalary() {
         // TODO implement here
     }
 

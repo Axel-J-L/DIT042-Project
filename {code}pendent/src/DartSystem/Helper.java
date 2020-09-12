@@ -20,8 +20,9 @@ public class Helper {
      * @param string
      */
     public static String getInput(String message) {
-    	
+
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+
         System.out.println(message);
 
         String userInput = scanner.nextLine();  // Read user input

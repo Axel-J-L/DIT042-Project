@@ -20,7 +20,7 @@ public class Helper {
      *
      */
 
-    // THIS ONE IS SUPER USEFUL USE IT!
+    // THIS ONE IS SUPER USEFUL USE IT! something with opening and closing the scanner break swapping between menus (Drake)
     public static String getInput(String message) { // Method to get string input from user and return
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object

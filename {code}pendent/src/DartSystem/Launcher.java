@@ -3,6 +3,7 @@ package DartSystem;
 import DartSystem.DartController;
 
 import java.lang.*;
+import java.net.Authenticator;
 
 /**
  * 
@@ -14,6 +15,7 @@ public class Launcher {
         // Calling objects to be used :D (drake)
         DartController session = new DartController();
         Helper input = new Helper();
+        Authenticator test = new Authenticator();
 
 //        Manager.managerMenu(); Manager menu; //made the manager menu (D)
 //       DartController.DartController();

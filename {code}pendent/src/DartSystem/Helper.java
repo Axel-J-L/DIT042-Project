@@ -76,28 +76,27 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-        // IN PROGRESS DON'T USE YET! (D)
-    public static void Authenticator() { // ideally test the password of the given class against what the user entered
-        Manager mPass = new Manager();
-        Employee ePass = new Employee();
-
+        // should work not but I haven't tested it (D)
+    public static String Authenticator() { // authenticates passwords
+        Manager mPass = new Manager(); // called the password from Manager class
+        Employee ePass = new Employee(); // called the password from Employee class
+        // mPass.password = admin1234 & ePass.password =
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Password: "); // hide password input
+        System.out.print("Password: "); // would like to add the ability to hide password as its being input
         String userEntry = scanner.nextLine();
         scanner.close(); // Close scanner
         // checks both the manager and the employee passwords to see if you entered correct
-        // (current bug if you enter employee password for manager menu you'll get in) GONNA FIX (D)
+        // I think it will work but not 100% sure (D)
         if (userEntry != mPass.password) {
-            mPass.password = "incorrect";
+            return mPass.password = "incorrect";
         } else if (userEntry == mPass.password){
-            mPass.password = mPass.password;
+            return mPass.password = mPass.password;
         } else if (userEntry != ePass.password){
-            ePass.password = "incorrect";
+            return ePass.password = "incorrect";
         } else if (userEntry == ePass.password) {
-            ePass.password = ePass.password;
+            return ePass.password = ePass.password;
         } else {
-            mPass.password = "incorrect";
-            ePass.password = "incorrect";
+            return "incorrect";
         }
     }
 }

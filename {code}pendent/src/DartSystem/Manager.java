@@ -11,24 +11,21 @@ public class Manager {
      * Default constructor
      */
     public Manager() {
-
-        }
+    }
 
 
     /**
-     * 
+     *
      */
     public void mPassword() { //this checks the manager password. (drake)
         String pass = "admin1234";
-        String prompt = "Password: ";
         Helper input = new Helper();
-        String response = input.getInput(prompt);
+        String response = input.Password();
 
-//        if (prompt == pass){
-//            System.out.println(" this should unlock the Manager Menu, but has yet to be implemented");
-//        } else {
-//            DartController.DartController();
-//        }
+//            DartController.DartController(); //prints Main menu until correct password is entered (D)
+
+        }
+    }
 
 
 
@@ -59,6 +56,3 @@ public class Manager {
 //     */
 //    public void displaySalary() {
 //        // TODO implement here
-         }
-
-}

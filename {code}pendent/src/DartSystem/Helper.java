@@ -1,7 +1,7 @@
 package DartSystem;
 
 import java.util.*;
-
+import java.io.*;
 /**
  * 
  */
@@ -17,16 +17,18 @@ public class Helper {
     }
 
     /**
-
+     *
      */
+
+    // THIS ONE IS SUPER USEFUL USE IT!
     public static String getInput(String message) { // Method to get string input from user and return
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-        System.out.println(message);
+        System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
         String userInput = scanner.nextLine();  // Read user input
         scanner.close(); // Close scanner
         return userInput;  // Output user input
-        
+
     }
 
     public String getMenuInput(String message, String[] acceptSet) { // Method to get menu input from user and return
@@ -48,21 +50,29 @@ public class Helper {
 
             }
 
-        } while(accept);
+        } while (accept);
 
         return this.userInput; // Returns user's menu choice back to called class
     }
 
     /**
-     * 
+     *
      */
     public void printArray(String[] pArray[]) {
-    	
-    	for (String[] element: pArray) {
+
+        for (String[] element : pArray) {
             System.out.println(element);
         }
-    	
+
         // TODO implement here
     }
 
+    // asks for password and then returns value (would like to implement authentication and hide password)
+        public static String Password () { //this is to implement passwords and password protection (D)
+            Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+            System.out.print("Password: "); // hide password input
+            String userPass = scanner.nextLine();
+            scanner.close(); // Close scanner
+            return userPass;  // Output user input
+    }
 }

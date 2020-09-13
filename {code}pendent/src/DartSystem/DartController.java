@@ -33,7 +33,7 @@ public class DartController {
                     System.out.println("Let's Go to Manager section");
                     break;
                 case "e":
-                    System.out.println("Let's Go to Emnployee section");
+                    System.out.println("Let's Go to Employee section");
                     break;
                 case "c":
                     System.out.println("Let's Go to Customer section");

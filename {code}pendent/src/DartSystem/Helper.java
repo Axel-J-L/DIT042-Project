@@ -77,7 +77,7 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-        // should work not but I haven't tested it (D)
+        // Dont think it works
         // if this works it will replace the password method (D)
     public static String Authenticator() { // authenticates passwords
         Manager mPass = new Manager(); // called the password from Manager class

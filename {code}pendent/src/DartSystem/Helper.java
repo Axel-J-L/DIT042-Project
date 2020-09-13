@@ -67,7 +67,8 @@ public class Helper {
         // TODO implement here
     }
 
-    // asks for password and then returns value (would like to implement authentication and hide password)
+    // asks for password and then returns value
+    // (would like to implement authentication and hide password)
     public static String Password() { //this is to implement passwords and password protection (D)
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print("Password: "); // hide password input
@@ -77,6 +78,7 @@ public class Helper {
     }
 
         // should work not but I haven't tested it (D)
+        // if this works it will replace the password method (D)
     public static String Authenticator() { // authenticates passwords
         Manager mPass = new Manager(); // called the password from Manager class
         Employee ePass = new Employee(); // called the password from Employee class

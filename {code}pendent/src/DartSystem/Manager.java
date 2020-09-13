@@ -19,14 +19,19 @@ public class Manager {
      */
     public void mPassword() { //this checks the manager password. (drake)
         String pass = "admin1234";
+        String response = "incorrect";
         Helper input = new Helper();
-        String response = input.Password();
+        response = input.Password();
 
-//            DartController.DartController(); //prints Main menu until correct password is entered (D)
-
-        }
     }
 
+    /**
+     *
+     */
+    public void managerMenu() {
+        // TODO implement here
+    }
+}
 
 
 
@@ -36,14 +41,8 @@ public class Manager {
 
 
 
-//
-//    /**
-//     *
-//     */
-//    public void managerMenu() {
-//        // TODO implement here
-//    }
-//
+
+
 //    /**
 //     *
 //     */

@@ -58,8 +58,15 @@ public class Employee {
      */
     public void employeeMenu() {
         // TODO implement here
-        System.out.println("DartSystem.Employee Menu");
-        System.out.println("1. Enter frejioer");
+        System.out.println("<<< Employee menu >>>");
+        System.out.println("Employee screen - Type one of the options below:");
+        System.out.println("1. Enter \"1\" to register a game ");
+        System.out.println("2. Enter \"2\" to remove a game");
+        System.out.println("3. Enter \"3\" to register a customer");
+        System.out.println("2. Enter \"4\" to remove a customer");
+        System.out.println("2. Enter \"5\" to show total rent profit");
+        System.out.println("2. Enter \"6\" to view all games");
+        System.out.println("2. Enter \"7\" to return to main menu\n");
     }
 
     /**

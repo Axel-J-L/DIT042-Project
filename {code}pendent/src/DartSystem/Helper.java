@@ -75,4 +75,5 @@ public class Helper {
             scanner.close(); // Close scanner
             return userPass;  // Output user input
     }
+
 }

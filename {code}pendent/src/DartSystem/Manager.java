@@ -4,6 +4,8 @@ package DartSystem;
  * 
  */
 public class Manager {
+    // manager password to use when authenticating for manager menu (d)
+    public String password = "admin1234";
 
     /**
      * Default constructor
@@ -32,7 +34,6 @@ public class Manager {
      */
     public void authManager() { //this checks the manager password. (drake)
         // TODO implement here
-            String pass = "admin1234";
             String response = "incorrect";
             Helper input = new Helper();
             response = input.Password();

@@ -23,9 +23,13 @@ public class Manager {
         String prompt = "Password: ";
         Helper input = new Helper();
         input.getInput(prompt);
-        while (prompt != pass){
-            DartController.DartController();
-    }
+        System.out.println(input.getInput();
+
+//        if (prompt == pass){
+//            System.out.println(" this should unlock the Manager Menu, but has yet to be implemented");
+//        } else {
+//            DartController.DartController();
+//        }
 
 
 

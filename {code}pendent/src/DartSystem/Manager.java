@@ -28,8 +28,13 @@ public class Manager {
     /**
      *
      */
-    public void managerMenu() {
+    public static void managerMenu() {
         // TODO implement here
+        System.out.println("<<< Manager Menu >>>");
+        System.out.println("Manager Screen - Type one of the options below:");
+        System.out.println("1. Enter \"1\" to add an employee ");
+        System.out.println("2. Enter \"2\" to view all employee's");
+        System.out.println("3. Enter \"3\" to exit system \n");
     }
 }
 

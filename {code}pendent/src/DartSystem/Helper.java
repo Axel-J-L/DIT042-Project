@@ -77,7 +77,7 @@ public class Helper {
     }
 
         // IN PROGRESS DONE USE YET! (D)
-    public static boolean Authenticator() { // ideally test the password of the given class against what the user entered
+    public static String Authenticator() { // ideally test the password of the given class against what the user entered
         Manager mPass = new Manager();
         Employee ePass = new Employee();
 
@@ -89,15 +89,15 @@ public class Helper {
         // checks both the manager and the employee passwords to see if you entered correct
         // (current bug if you enter employee password for manager menu you'll get in) GONNA FIX (D)
         if (userEntry != mPass.password) {
-            return false;
+
         } else if (userEntry == mPass.password){
-            return true;
+
         } else if (userEntry != ePass.password){
-            return false;
+
         } else if (userEntry == ePass.password) {
-            return true;
+
         } else {
-            return false;
+
         }
     }
 }

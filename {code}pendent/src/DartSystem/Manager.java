@@ -22,7 +22,7 @@ public class Manager {
         String pass = "admin1234";
         String prompt = "Password: ";
         Helper input = new Helper();
-        input.getInput(prompt);
+        String response = input.getInput(prompt);
 
 //        if (prompt == pass){
 //            System.out.println(" this should unlock the Manager Menu, but has yet to be implemented");

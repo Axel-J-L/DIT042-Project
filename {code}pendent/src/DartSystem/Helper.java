@@ -1,6 +1,6 @@
 package DartSystem;
 
-import java.util.*;
+import java.util.Scanner;
 import java.io.*;
 /**
  * 
@@ -27,8 +27,6 @@ public class Helper {
 
         userInput = scanner.nextLine(); // Read user input
 
-        scanner.close();
-
         return userInput;  // Output user input
 
 
@@ -47,18 +45,12 @@ public class Helper {
             for (int i = 0; i < acceptSet.length; i++) { // Loop around AcceptSet array for matching letter
                 if (userInput.equals(acceptSet[i])) { // If user input is correct, then break loop and close scanner
                     accept = false;
+
                 }
-
             }
-
-            menu.reset();
-            menu.close();
-
         } while (accept);
 
-
-
-        return this.userInput; // Returns user's menu choice back to called class
+        return userInput; // Returns user's menu choice back to called class
     }
 
     /**

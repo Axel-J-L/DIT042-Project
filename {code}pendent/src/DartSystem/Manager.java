@@ -18,12 +18,12 @@ public class Manager {
      */
     public static void managerMenu() {
         // TODO implement here
-        System.out.println("<<< Manager Menu >>>");
+        System.out.println("\n<<< Manager Menu >>>");
         System.out.println("Manager Screen - Type one of the options below:");
-        System.out.println("1. Enter \"1\" to add an employee ");
-        System.out.println("2. Enter \"2\" to view all employee's");
-        System.out.println("3. Enter \"3\" to go to Employee Menu");
-        System.out.println("4. Enter \"4\" to return to Main Menu \n");
+        System.out.println("1. Enter \"A\" to add an employee ");
+        System.out.println("2. Enter \"V\" to view all employee's");
+        System.out.println("3. Enter \"E\" to go to Employee Menu");
+        System.out.println("4. Enter \"X\" to return to Main Menu");
 
         Helper managerMenu = new Helper();
         String[] mMenuAcceptSet = {"A","a","V","v","E","e","X","x"}; // Accepted responses for menu options

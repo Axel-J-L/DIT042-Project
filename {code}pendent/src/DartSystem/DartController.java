@@ -21,19 +21,21 @@ public class DartController {
             System.out.println("1. Enter \"M\" for DartSystem.Manager ");
             System.out.println("2. Enter \"E\" for DartSystem.Employee");
             System.out.println("3. Enter \"C\" for DartSystem.Customer");
-            System.out.println("4. Enter \"X\" to exit system \n");
+            System.out.println("4. Enter \"X\" to exit system");
 
             String[] mainMenuAcceptSet = {"M","m","E","e","C","c","X","x"}; // Accepted responses for menu options
-            Helper getinput = new Helper(); // Creating new Helper object
-            String userInput = getinput.getMenuInput("Please enter your choice: ", mainMenuAcceptSet); // Calling Helper method
+            Helper getInput = new Helper(); // Creating new Helper object
+            String userInput = getInput.getMenuInput("Please enter your choice: ", mainMenuAcceptSet); // Calling Helper method
 
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    System.out.println("Let's Go to Manager section");
+                    Manager.managerMenu();
+//                    System.out.println("Let's Go to Manager section"); //testing manager menu
                     break;
                 case "e":
-                    System.out.println("Let's Go to Employee section");
+                    Employee.employeeMenu();
+//                    System.out.println("Let's Go to Employee section");
                     break;
                 case "c":
                     System.out.println("Let's Go to Customer section");

@@ -77,28 +77,28 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-        // should work not but I haven't tested it (D)
-        // if this works it will replace the password method (D)
-    public static String Authenticator() { // authenticates passwords
-        Manager mPass = new Manager(); // called the password from Manager class
-        Employee ePass = new Employee(); // called the password from Employee class
-        // mPass.password = admin1234 & ePass.password =
-        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Password: "); // would like to add the ability to hide password as its being input
-        String userEntry = scanner.nextLine();
-        scanner.close(); // Close scanner
-        // checks both the manager and the employee passwords to see if you entered correct
-        // I think it will work but not 100% sure (D)
-        if (userEntry != mPass.password) {
-            return mPass.password = "incorrect";
-        } else if (userEntry == mPass.password){
-            return mPass.password = mPass.password;
-        } else if (userEntry != ePass.password){
-            return ePass.password = "incorrect";
-        } else if (userEntry == ePass.password) {
-            return ePass.password = ePass.password;
-        } else {
-            return "incorrect";
-        }
-    }
+  // DOESNT WORK /CRY
+//        // if this works it will replace the password method (D)
+//    public static String Authenticator() { // authenticates passwords
+//        Manager mPass = new Manager(); // called the password from Manager class
+//        Employee ePass = new Employee(); // called the password from Employee class
+//        // mPass.password = admin1234 & ePass.password =
+//        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+//        System.out.print("Password: "); // would like to add the ability to hide password as its being input
+//        String userEntry = scanner.nextLine();
+//        scanner.close(); // Close scanner
+//        // checks both the manager and the employee passwords to see if you entered correct
+//        // I think it will work but not 100% sure (D)
+//        if (userEntry != mPass.password) {
+//            return mPass.password = "incorrect";
+//        } else if (userEntry == mPass.password){
+//            return mPass.password = mPass.password;
+//        } else if (userEntry != ePass.password){
+//            return ePass.password = "incorrect";
+//        } else if (userEntry == ePass.password) {
+//            return ePass.password = ePass.password;
+//        } else {
+//            return "incorrect";
+//        }
+//    }
 }

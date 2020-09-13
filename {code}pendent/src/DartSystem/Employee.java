@@ -57,7 +57,7 @@ public class Employee {
     /**
      * 
      */
-    public void employeeMenu() {
+    public static void employeeMenu() {
         // TODO implement here
         System.out.println("<<< Employee menu >>>");
         System.out.println("Employee screen - Type one of the options below:");

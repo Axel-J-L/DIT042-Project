@@ -1,7 +1,6 @@
 package DartSystem;
 
 import java.io.*;
-import java.net.Authenticator;
 import java.util.*;
 import java.lang.*;
 
@@ -22,40 +21,21 @@ public class DartController {
             System.out.println("1. Enter \"M\" for DartSystem.Manager ");
             System.out.println("2. Enter \"E\" for DartSystem.Employee");
             System.out.println("3. Enter \"C\" for DartSystem.Customer");
-            System.out.println("4. Enter \"X\" to exit system \n");
+            System.out.println("4. Enter \"X\" to exit system");
 
             String[] mainMenuAcceptSet = {"M","m","E","e","C","c","X","x"}; // Accepted responses for menu options
-            Helper getinput = new Helper(); // Creating new Helper object
-            String userInput = getinput.getMenuInput("Please enter your choice: ", mainMenuAcceptSet); // Calling Helper method
+            Helper getInput = new Helper(); // Creating new Helper object
+            String userInput = getInput.getMenuInput("Please enter your choice: ", mainMenuAcceptSet); // Calling Helper method
 
             switch(userInput.toLowerCase())
             {
                 case "m":
-
-                    Helper mAuth = new Helper();
-                    String authSuccess = mAuth.Authenticator();
-
-                    if (authSuccess.equals("success")) {
-                        Manager manage = new Manager();
-                        manage.managerMenu();
-                    } else {
-
-                        System.out.println("\n*** Wrong password *** \n");
-
-                        DartController();
-                    }
-
-                    // None of the scanners work saying Exception in thread "main" java.util.NoSuchElementException: No line found
-                    // Need to sort it out
-                    // Let's rethink authenticator.
-                    // There is 1 manager. Needs to ask only password.
-                    // There are many employees. So need to ask name, username, ID or something else.
-                    // So authentication better be separate at the moment.
-                    // There is a way to get password entry hidden. Like text being typed is not shown. Will find it.
-
+                    Manager.managerMenu();
+//                    System.out.println("Let's Go to Manager section"); //testing manager menu
                     break;
                 case "e":
-                    System.out.println("Let's Go to Employee section");
+                    Employee.employeeMenu();
+//                    System.out.println("Let's Go to Employee section");
                     break;
                 case "c":
                     System.out.println("Let's Go to Customer section");

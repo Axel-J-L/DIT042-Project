@@ -57,7 +57,7 @@ public class Employee {
     /**
      * 
      */
-    public void employeeMenu() {
+    public static void employeeMenu() {
         // TODO implement here
         System.out.println("<<< Employee menu >>>");
         System.out.println("Employee screen - Type one of the options below:");
@@ -82,9 +82,8 @@ public class Employee {
      */
     public void authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
         // TODO implement here
-        String password ="password123";
         Helper passScan = new Helper();
-        String userResponse = passScan.Authenticator();
+        String userResponse = passScan.Password();
 
     }
 

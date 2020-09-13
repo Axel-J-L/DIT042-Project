@@ -23,10 +23,9 @@ public class DartController {
             System.out.println("2. Enter \"E\" for DartSystem.Employee");
             System.out.println("3. Enter \"C\" for DartSystem.Customer");
             System.out.println("4. Enter \"X\" to exit system");
-            System.out.print("Enter: ");
+            // need to implement a method to store users choice (drake)
 
     }
-}
 
 
 
@@ -57,6 +56,14 @@ public class DartController {
 
 
 
+public static void menuOption() {
+    Helper menuChoice = new Helper();
+    String enter = "Enter: ";
+    menuChoice.getInput(enter);
+
+
+    }
+}
 
 
 
@@ -72,11 +79,6 @@ public class DartController {
 
 
 
-
-//
-//    /**
-//     *
-//     */
 //    public String menuState;
 //
 //    /**

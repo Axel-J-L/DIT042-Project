@@ -6,7 +6,6 @@ import java.util.*;
  * 
  */
 public class Helper {
-
     /**
      * Default constructor
      */
@@ -19,8 +18,7 @@ public class Helper {
      * @param char 
      * @param string
      */
-    public static String getInput(String message) {
-
+    public String getInput(String message) {
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
 
         System.out.println(message);

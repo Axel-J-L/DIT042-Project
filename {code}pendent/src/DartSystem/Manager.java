@@ -24,6 +24,11 @@ public class Manager {
         System.out.println("2. Enter \"2\" to view all employee's");
         System.out.println("3. Enter \"3\" to go to Employee Menu");
         System.out.println("4. Enter \"4\" to return to Main Menu \n");
+
+        Helper managerMenu = new Helper();
+        String[] mMenuAcceptSet = {"A","a","V","v","E","e","X","x"}; // Accepted responses for menu options
+
+        String mInput = managerMenu.getMenuInput("Please enter your choice: ", mMenuAcceptSet);
     }
 
 
@@ -34,9 +39,7 @@ public class Manager {
      */
     public void authManager() { //this checks the manager password. (drake)
         // TODO implement here
-            String response = "incorrect";
-            Helper input = new Helper();
-            response = input.Password();
+
 
         }
     }

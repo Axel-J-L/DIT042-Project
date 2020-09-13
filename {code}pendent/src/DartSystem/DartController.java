@@ -1,6 +1,7 @@
 package DartSystem;
 
 import java.io.*;
+import java.net.Authenticator;
 import java.util.*;
 import java.lang.*;
 
@@ -30,7 +31,17 @@ public class DartController {
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    System.out.println("Let's Go to Manager section");
+                    Manager manage = new Manager();
+                    manage.managerMenu();
+
+                    // None of the scanners work saying Exception in thread "main" java.util.NoSuchElementException: No line found
+                    // Need to sort it out
+                    // Let's rethink authenticator.
+                    // There is 1 manager. Needs to ask only password.
+                    // There are many employees. So need to ask name, username, ID or something else.
+                    // So authentication better be separate at the moment.
+                    // There is a way to get password entry hidden. Like text being typed is not shown. Will find it.
+
                     break;
                 case "e":
                     System.out.println("Let's Go to Employee section");

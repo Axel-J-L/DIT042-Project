@@ -14,8 +14,11 @@ public class Launcher {
         // TODO implement here
         // Calling objects to be used :D (drake)
         DartController session = new DartController();
+
+        session.DartController();
+
         Helper input = new Helper();
-        Authenticator test = new Authenticator();
+
 
 //        Manager.managerMenu(); Manager menu; //made the manager menu (D)
 //       DartController.DartController();

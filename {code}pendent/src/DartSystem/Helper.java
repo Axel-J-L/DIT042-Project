@@ -68,12 +68,36 @@ public class Helper {
     }
 
     // asks for password and then returns value (would like to implement authentication and hide password)
-        public static String Password () { //this is to implement passwords and password protection (D)
-            Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-            System.out.print("Password: "); // hide password input
-            String userPass = scanner.nextLine();
-            scanner.close(); // Close scanner
-            return userPass;  // Output user input
+    public static String Password() { //this is to implement passwords and password protection (D)
+        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+        System.out.print("Password: "); // hide password input
+        String userPass = scanner.nextLine();
+        scanner.close(); // Close scanner
+        return userPass;  // Output user input
     }
 
+        // IN PROGRESS DONE USE YET! (D)
+    public static boolean Authenticator() { // ideally test the password of the given class against what the user entered
+        Manager mPass = new Manager();
+        Employee ePass = new Employee();
+
+        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+        System.out.print("Password: "); // hide password input
+        String userEntry = scanner.nextLine();
+        scanner.close(); // Close scanner
+
+        // checks both the manager and the employee passwords to see if you entered correct
+        // (current bug if you enter employee password for manager menu youll get in) GONNA FIX (D)
+        if (userEntry != mPass.password) {
+            return false;
+        } else if (userEntry == mPass.password){
+            return true;
+        } else if (userEntry != ePass.password){
+            return false;
+        } else if (userEntry == ePass.password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

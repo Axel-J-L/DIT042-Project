@@ -31,8 +31,19 @@ public class DartController {
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    Manager manage = new Manager();
-                    manage.managerMenu();
+
+                    Helper mAuth = new Helper();
+                    String authSuccess = mAuth.Authenticator();
+
+                    if (authSuccess.equals("success")) {
+                        Manager manage = new Manager();
+                        manage.managerMenu();
+                    } else {
+
+                        System.out.println("\n*** Wrong password *** \n");
+
+                        DartController();
+                    }
 
                     // None of the scanners work saying Exception in thread "main" java.util.NoSuchElementException: No line found
                     // Need to sort it out

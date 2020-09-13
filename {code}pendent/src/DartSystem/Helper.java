@@ -82,16 +82,17 @@ public class Helper {
     public String Authenticator() { // authenticates passwords
 
         String authSuccess;
-        String mpassword = "admin1234";
+        String ePassword = null;
+        String mPassword = "admin1234";
 
-        String ePassword = getInput("Enter manager password: ");
+        ePassword = getInput("Enter your password: ");
 
         // checks both the manager and the employee passwords to see if you entered correct
         // I think it will work but not 100% sure (D)
-        if (mpassword.equals(ePassword)) {
-            authSuccess = "Correct";
+        if (mPassword.equals(ePassword)) {
+            authSuccess = "success";
         } else {
-            authSuccess = "No good";
+            authSuccess = "nogood";
         }
 
         return authSuccess;

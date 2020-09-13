@@ -76,8 +76,8 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-        // IN PROGRESS DONE USE YET! (D)
-    public static String Authenticator() { // ideally test the password of the given class against what the user entered
+        // IN PROGRESS DON'T USE YET! (D)
+    public static void Authenticator() { // ideally test the password of the given class against what the user entered
         Manager mPass = new Manager();
         Employee ePass = new Employee();
 
@@ -85,19 +85,19 @@ public class Helper {
         System.out.print("Password: "); // hide password input
         String userEntry = scanner.nextLine();
         scanner.close(); // Close scanner
-
         // checks both the manager and the employee passwords to see if you entered correct
         // (current bug if you enter employee password for manager menu you'll get in) GONNA FIX (D)
         if (userEntry != mPass.password) {
-
+            mPass.password = "incorrect";
         } else if (userEntry == mPass.password){
-
+            mPass.password = mPass.password;
         } else if (userEntry != ePass.password){
-
+            ePass.password = "incorrect";
         } else if (userEntry == ePass.password) {
-
+            ePass.password = ePass.password;
         } else {
-
+            mPass.password = "incorrect";
+            ePass.password = "incorrect";
         }
     }
 }

@@ -32,7 +32,8 @@ public class Employee {
     /**
      * 
      */
-    public String password;
+    public String password = "password123";
+
 
     /**
      * 
@@ -79,8 +80,12 @@ public class Employee {
     /**
      * 
      */
-    public void authEmployee() {
+    public void authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
         // TODO implement here
+        String password ="password123";
+        Helper passScan = new Helper();
+        String userResponse = passScan.Authenticator();
+
     }
 
     /**

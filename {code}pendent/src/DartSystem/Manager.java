@@ -11,18 +11,6 @@ public class Manager {
     public Manager() {
     }
 
-
-    /**
-     *
-     */
-    public void mPassword() { //this checks the manager password. (drake)
-        String pass = "admin1234";
-        String response = "incorrect";
-        Helper input = new Helper();
-        response = input.Password();
-
-    }
-
     /**
      *
      */
@@ -35,24 +23,22 @@ public class Manager {
         System.out.println("3. Enter \"3\" to go to Employee Menu");
         System.out.println("4. Enter \"4\" to return to Main Menu \n");
     }
-}
 
 
 
 
+    /**
+     *
+     */
+    public void authManager() { //this checks the manager password. (drake)
+        // TODO implement here
+            String pass = "admin1234";
+            String response = "incorrect";
+            Helper input = new Helper();
+            response = input.Password();
 
-
-
-
-
-
-
-//    /**
-//     *
-//     */
-//    public void authManager() {
-//        // TODO implement here
-//    }
+        }
+    }
 //
 //    /**
 //     *

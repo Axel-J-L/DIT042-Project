@@ -67,7 +67,8 @@ public class Helper {
         // TODO implement here
     }
 
-    // asks for password and then returns value (would like to implement authentication and hide password)
+    // asks for password and then returns value
+    // (would like to implement authentication and hide password)
     public static String Password() { //this is to implement passwords and password protection (D)
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print("Password: "); // hide password input
@@ -76,28 +77,28 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-        // IN PROGRESS DONE USE YET! (D)
-    public static boolean Authenticator() { // ideally test the password of the given class against what the user entered
-        Manager mPass = new Manager();
-        Employee ePass = new Employee();
-
+        // should work not but I haven't tested it (D)
+        // if this works it will replace the password method (D)
+    public static String Authenticator() { // authenticates passwords
+        Manager mPass = new Manager(); // called the password from Manager class
+        Employee ePass = new Employee(); // called the password from Employee class
+        // mPass.password = admin1234 & ePass.password =
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Password: "); // hide password input
+        System.out.print("Password: "); // would like to add the ability to hide password as its being input
         String userEntry = scanner.nextLine();
         scanner.close(); // Close scanner
-
         // checks both the manager and the employee passwords to see if you entered correct
-        // (current bug if you enter employee password for manager menu you'll get in) GONNA FIX (D)
+        // I think it will work but not 100% sure (D)
         if (userEntry != mPass.password) {
-            return false;
+            return mPass.password = "incorrect";
         } else if (userEntry == mPass.password){
-            return true;
+            return mPass.password = mPass.password;
         } else if (userEntry != ePass.password){
-            return false;
+            return ePass.password = "incorrect";
         } else if (userEntry == ePass.password) {
-            return true;
+            return ePass.password = ePass.password;
         } else {
-            return false;
+            return "incorrect";
         }
     }
 }

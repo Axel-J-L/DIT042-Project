@@ -4,7 +4,7 @@ package DartSystem;
  * 
  */
 public class Manager {
-    // manager password to use when authenticating for manager menu (d)
+    // manager password to use when authenticating for manager menu (D)
     public String password = "admin1234";
 
     /**

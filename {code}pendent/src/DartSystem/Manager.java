@@ -1,7 +1,5 @@
 package DartSystem;
 
-import java.util.*;
-
 /**
  * 
  */
@@ -34,7 +32,8 @@ public class Manager {
         System.out.println("Manager Screen - Type one of the options below:");
         System.out.println("1. Enter \"1\" to add an employee ");
         System.out.println("2. Enter \"2\" to view all employee's");
-        System.out.println("3. Enter \"3\" to exit system \n");
+        System.out.println("3. Enter \"3\" to go to Employee Menu");
+        System.out.println("4. Enter \"4\" to return to Main Menu \n");
     }
 }
 

@@ -15,7 +15,7 @@ public class Launcher {
         DartController session = new DartController();
         Helper input = new Helper();
 
-//        Manager.managerMenu(); Manager menu //made the manager menu (D)
+//        Manager.managerMenu(); Manager menu; //made the manager menu (D)
 //       DartController.DartController();
 
 //       Manager authManager = new Manager(); //calling manager object to authenticate manager (drake)

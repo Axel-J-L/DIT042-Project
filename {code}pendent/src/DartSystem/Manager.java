@@ -11,36 +11,51 @@ public class Manager {
      * Default constructor
      */
     public Manager() {
-    }
 
-    /**
-     * 
-     */
-    public String password;
-
-
-
+        }
 
 
     /**
      * 
      */
-    public void managerMenu() {
-        // TODO implement here
+    public void mPassword() { //this checks the manager password. (drake)
+        String pass = "admin1234";
+        String prompt = "Password: ";
+        Helper input = new Helper();
+        input.getInput(prompt);
+        while (prompt != pass){
+            DartController.DartController();
     }
 
-    /**
-     * 
-     */
-    public void authManager() {
-        // TODO implement here
-    }
 
-    /**
-     * 
-     */
-    public void displaySalary() {
-        // TODO implement here
-    }
+
+
+
+
+
+
+
+
+//
+//    /**
+//     *
+//     */
+//    public void managerMenu() {
+//        // TODO implement here
+//    }
+//
+//    /**
+//     *
+//     */
+//    public void authManager() {
+//        // TODO implement here
+//    }
+//
+//    /**
+//     *
+//     */
+//    public void displaySalary() {
+//        // TODO implement here
+         }
 
 }

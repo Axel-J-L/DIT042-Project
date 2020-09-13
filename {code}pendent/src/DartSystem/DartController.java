@@ -15,22 +15,26 @@ public class DartController {
 
     public static void DartController() {
 
+            System.out.println("<<< Main Menu >>>");
+            System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
+            System.out.println(" ");
+            System.out.println("Please specify your role by entering one of the options given:");
+            System.out.println("1. Enter \"M\" for DartSystem.Manager ");
+            System.out.println("2. Enter \"E\" for DartSystem.Employee");
+            System.out.println("3. Enter \"C\" for DartSystem.Customer");
+            System.out.println("4. Enter \"X\" to exit system");
+            System.out.print("Enter: ");
 
     }
+}
+
+
+
 
 //    going to modify this so that if the wrong password is entered it takes you back to the main menu (drake)
 //        Scanner input = new Scanner(System.in);
 //        int menuC = 0;
 //        while (menuC != 1 || menuC != 2 || menuC != 3 || menuC != 4) {
-//            System.out.println("<<< Main Menu >>>");
-//            System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up!");
-//            System.out.println(" ");
-//            System.out.println("Please specify your role by entering one of the options given:");
-//            System.out.println("1. Enter \"M\" for DartSystem.Manager ");
-//            System.out.println("2. Enter \"E\" for DartSystem.Employee");
-//            System.out.println("3. Enter \"C\" for DartSystem.Customer");
-//            System.out.println("4. Enter \"X\" to exit system");
-//            System.out.print("Enter: ");
 //            menuC = input.nextInt();
 //            input.nextLine();
 //            if (menuC == 1) {
@@ -46,20 +50,6 @@ public class DartController {
 //                System.out.println("");
 //            }
 //        }
-
-
-    public static void mainMenu() {
-        String title = "<<< Main Menu >>>";
-        String slogan = "Welcome to DART, your good old game rental system. The competition has no steam to keep up!";
-        String divider = " ";
-        String askUser = "Please specify your role by entering one of the options given:";
-        String optionOne = "1. Enter \"M\" for DartSystem.Manager ";
-        String optionTwo = "2. Enter \"E\" for DartSystem.Employee";
-        String optionThree = "3. Enter \"C\" for DartSystem.Customer";
-        String optionFour = "4. Enter \"X\" to exit system";
-        String userInput = "Enter: ";
-
-    }
 
 
 

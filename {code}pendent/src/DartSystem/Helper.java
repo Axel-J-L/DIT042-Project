@@ -84,7 +84,7 @@ public class Helper {
     }
      **/
 
-        // should work not but I haven't tested it (D)
+        // Dont think it works
         // if this works it will replace the password method (D)
 
     public String Authenticator() { // authenticates passwords

@@ -87,7 +87,7 @@ public class Helper {
         scanner.close(); // Close scanner
 
         // checks both the manager and the employee passwords to see if you entered correct
-        // (current bug if you enter employee password for manager menu youll get in) GONNA FIX (D)
+        // (current bug if you enter employee password for manager menu you'll get in) GONNA FIX (D)
         if (userEntry != mPass.password) {
             return false;
         } else if (userEntry == mPass.password){

@@ -20,7 +20,7 @@ public class Manager {
         System.out.println("Manager Screen - Type one of the options below:");
         System.out.println("1. Enter \"A\" to add an employee ");
         System.out.println("2. Enter \"B\" to view all employee's");
-        System.out.println("3. Enter \"C\" to go to Employee Menu");
+        System.out.println("3. Enter \"C\" to go to Employee Menu"); //comment not in requirements consider removing
         System.out.println("4. Enter \"R\" to return to Main Menu");
 
         String[] managerMenuAcceptSet = {"a", "A", "b", "B", "c", "C", "r", "R"}; // Accepted responses for menu options

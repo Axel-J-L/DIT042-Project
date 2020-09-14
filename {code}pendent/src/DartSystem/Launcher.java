@@ -25,6 +25,7 @@ public class Launcher {
 //       Manager authManager = new Manager(); //calling manager object to authenticate manager (drake)
 //       authManager.mPassword(); //authManger is what I called the manager object in Launcher (drake)
 //                                //mPassword calls the method to check for manager password (drake)
+
     }
 
     /**

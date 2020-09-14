@@ -16,6 +16,12 @@ public class Helper {
     public Helper() {
     }
 
+//Trying out an array list for adding and removing users. Axel
+    public static void arrList(){
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> users = new ArrayList<>();
+
+    }
     /**
      *
      */
@@ -91,7 +97,7 @@ public class Helper {
     public String Authenticator() { // authenticates passwords
 
         String authSuccess;
-        String ePassword = null;
+        String ePassword = "password123";
         String mPassword = "admin1234";
 
         ePassword = getInput("Enter your password: ");
@@ -106,4 +112,37 @@ public class Helper {
 
         return authSuccess;
     }
-}
+
+    // WORK IN PROGRESS, CREATING A METHOD FOR ADDING AND REMOVING USERS //Axel n Drake
+    //    public ArrayList<String> addUserList(String addUser, String addEmployee) {
+//        Scanner input = new Scanner(System.in);
+//        ArrayList<String> user = new ArrayList<>();
+//        System.out.println("Add employee name: ");
+//        String name1= new String();
+//
+//
+//        System.out.print(addUser + "Y/N: ");
+//        String eUser = input.nextLine();
+//        eUser = eUser.toUpperCase();
+//
+//
+//        while (eUser.equals("Y")) {
+//
+//            System.out.print(addEmployee);
+//            String name = input.nextLine();
+//            user.add(name);
+//            System.out.print(addUser + "Y/N: ");
+//            eUser = input.nextLine();
+//            eUser = eUser.toUpperCase();
+//
+//
+//        }
+//        for (int i = 0; i < user.size(); i++) {
+//            System.out.println(user.get(i));
+//
+//        }
+
+    }
+
+
+

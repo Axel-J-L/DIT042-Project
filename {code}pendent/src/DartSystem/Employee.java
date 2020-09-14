@@ -36,9 +36,9 @@ public class Employee {
         System.out.println("5. Enter \"E\" to show total rent profit");
         System.out.println("6. Enter \"F\" to view all games");
         System.out.println("7. Enter \"R\" to return to main menu\n");
-        String[] employeeMenuAcceptSet = {"A","a","B","b","C","c","D","d","E","e","F","f","R","r"}; // Accepted responses for menu options
-        Helper getInput = new Helper(); // Getting new object from Helper
-        String userInput = getInput.getMenuInput("Please enter your choice: ", employeeMenuAcceptSet); // using argument to call Helper method
+        String[] employeeMenuAcceptSet = {"A","a","B","b","C","c","D","d","E","e","F","f","R","r"}; // Accepted responses for menu options /A
+        Helper getInput = new Helper(); // Getting new object from Helper /A
+        String userInput = getInput.getMenuInput("Please enter your choice: ", employeeMenuAcceptSet); // using argument to call Helper method/A
 
         switch(userInput.toLowerCase())
         {
@@ -109,6 +109,11 @@ public class Employee {
      */
     public void removeEmployee() {
         // TODO implement here
+        Helper input=new Helper();
+        String nameRemove = "Which user would you like to remove?: ";
+        String empName = input.getInput(nameRemove);
+
+
     }
 
     /**

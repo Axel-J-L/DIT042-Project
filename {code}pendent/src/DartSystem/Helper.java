@@ -31,6 +31,18 @@ public class Helper {
 
     }
 
+    // made this to get integers instead of String (Drake)
+    public static int getInputInt(String message) { // Method to get string input from user and return
+
+        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+        System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
+        int userInput = scanner.nextInt();  // Read user input
+        scanner.nextLine();
+        // scanner.close(); // Close scanner - This causes issue, leave it commented out (Altan)
+        return userInput;  // Output user input
+
+    }
+
     public String getMenuInput(String message, String[] acceptSet) { // Method to get menu input from user and return
 
         Boolean accept = true;

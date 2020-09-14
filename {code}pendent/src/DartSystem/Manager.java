@@ -12,8 +12,8 @@ public class Manager {
     }
 
     /**
-     *
-     */fskald
+     *fskald
+     */
     public static void managerMenu() {
         // TODO implement here
         System.out.println("<<< Manager Menu >>>");

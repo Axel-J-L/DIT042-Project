@@ -32,7 +32,7 @@ public class Helper {
     }
 
     // made this to get integers instead of String (Drake)
-    public static int getInputInt(String message) { // Method to get string input from user and return
+    public static int getInt(String message) { // Method to get string input from user and return
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one

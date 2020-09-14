@@ -1,7 +1,7 @@
 package DartSystem;
 // Hey this is a demonstration for commit (D)
 import java.util.*;
-
+import java.time.Year;
 /**
  * 
  */
@@ -73,10 +73,23 @@ public class Employee {
      */
     public void addEmployee() {
         // TODO implement here
+        int empBirth=1;
+        int age=1;
         Helper input = new Helper();
-        String message = "Employee name: ";
-        String empName = input.getInput(message);
-        String
+        String askName = "Employee name: ";
+        String empName = input.getInput(askName);
+        String askBirthYear = "Employee birth year: ";
+        // empBirth=input.getInt(askBirthYear);
+        //  Year birthYear=input.next();
+       // Year currentYear=Year.now();
+         //age=currentYear.minus(empBirth);
+        // should fix it later
+        String askSalary=("Ask the Gross salary: ");
+        int grossSalary=input.getInt(askSalary);
+
+
+
+
     }
 
     /**

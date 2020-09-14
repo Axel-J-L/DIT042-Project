@@ -7,11 +7,9 @@ import java.time.Year;
  */
 public class Employee {
 
-    /**
-     * Default constructor
-     */
-    public Employee() {
-    }
+    // Dont think we need an employee method atleast at the moment (D)
+//    public Employee() {
+//    }
 
   //  public object ArrayList employees;
 
@@ -24,7 +22,7 @@ public class Employee {
 
 
 
-
+    // I think the employeeMenu might be better in the DartController class (D)
     public static void employeeMenu() {
         // Finished for the moment
         System.out.println("<<< Employee menu >>>");
@@ -73,6 +71,9 @@ public class Employee {
      */
     public void addEmployee() {
         // TODO implement here
+        // I think this might actually need to use the object employee to create new employees
+        // this would just mean changing the variables we declared here to be the ones stated in
+        // lines 16-21 (D)
         int empBirth=1;
         int age=1;
         Helper input = new Helper();

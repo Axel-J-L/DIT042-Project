@@ -30,8 +30,18 @@ public class DartController {
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    Manager.managerMenu();
-//                    System.out.println("Let's Go to Manager section"); //testing manager menu
+                    Helper mAuth = new Helper();
+                    String authSuccess = mAuth.Authenticator();
+
+                    if (authSuccess.equals("success")) {
+                        Manager manage = new Manager();
+                        manage.managerMenu();
+                    } else {
+
+                        System.out.println("\n*** Wrong password *** \n");
+
+                        DartController();
+                    }
                     break;
                 case "e":
                     Employee.employeeMenu();

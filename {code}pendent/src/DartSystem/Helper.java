@@ -26,7 +26,7 @@ public class Helper {
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
         String userInput = scanner.nextLine();  // Read user input
-        scanner.close(); // Close scanner
+        // scanner.close(); // Close scanner - This causes issue, leave it commented out (Altan)
         return userInput;  // Output user input
 
     }
@@ -45,7 +45,6 @@ public class Helper {
             for (int i = 0; i < acceptSet.length; i++) { // Loop around AcceptSet array for matching letter
                 if (userInput.equals(acceptSet[i])) { // If user input is correct, then break loop and close scanner
                     accept = false;
-                    menu.close();
                 }
 
             }
@@ -77,28 +76,22 @@ public class Helper {
         return userPass;  // Output user input
     }
 
-  // DOESNT WORK /CRY
-//        // if this works it will replace the password method (D)
-//    public static String Authenticator() { // authenticates passwords
-//        Manager mPass = new Manager(); // called the password from Manager class
-//        Employee ePass = new Employee(); // called the password from Employee class
-//        // mPass.password = admin1234 & ePass.password =
-//        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-//        System.out.print("Password: "); // would like to add the ability to hide password as its being input
-//        String userEntry = scanner.nextLine();
-//        scanner.close(); // Close scanner
-//        // checks both the manager and the employee passwords to see if you entered correct
-//        // I think it will work but not 100% sure (D)
-//        if (userEntry != mPass.password) {
-//            return mPass.password = "incorrect";
-//        } else if (userEntry == mPass.password){
-//            return mPass.password = mPass.password;
-//        } else if (userEntry != ePass.password){
-//            return ePass.password = "incorrect";
-//        } else if (userEntry == ePass.password) {
-//            return ePass.password = ePass.password;
-//        } else {
-//            return "incorrect";
-//        }
-//    }
+    public String Authenticator() { // authenticates passwords
+
+        String authSuccess;
+        String ePassword = null;
+        String mPassword = "admin1234";
+
+        ePassword = getInput("Enter your password: ");
+
+        // checks both the manager and the employee passwords to see if you entered correct
+        // I think it will work but not 100% sure (D)
+        if (mPassword.equals(ePassword)) {
+            authSuccess = "success";
+        } else {
+            authSuccess = "nogood";
+        }
+
+        return authSuccess;
+    }
 }

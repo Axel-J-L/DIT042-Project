@@ -26,7 +26,7 @@ public class Employee {
 
 
     public static void employeeMenu() {
-        // TODO implement here
+        // Finished for the moment
         System.out.println("<<< Employee menu >>>");
         System.out.println("Employee screen - Type one of the options below:");
         System.out.println("1. Enter \"A\" to register a game ");
@@ -73,8 +73,10 @@ public class Employee {
      */
     public void addEmployee() {
         // TODO implement here
-        System.out.println("Employee name: ");
-        System.out.println();
+        Helper input = new Helper();
+        String message = "Employee name: ";
+        String empName = input.getInput(message);
+        String
     }
 
     /**

@@ -13,50 +13,18 @@ public class Employee {
     public Employee() {
     }
 
-    /**
-     * 
+  //  public object ArrayList employees;
 
-    public object ArrayList employees;
-     */
-
-    /**
-     * 
-     */
     public String employeeId;
-
-    /**
-     * 
-     */
     public String name;
-
-    /**
-     * 
-     */
     public String password = "password123";
-
-
-    /**
-     * 
-     */
     public int birthYear;
-
-    /**
-     * 
-     */
     public String address;
-
-    /**
-     * 
-     */
     public int salary;
 
 
 
 
-
-    /**
-     * 
-     */
     public static void employeeMenu() {
         // TODO implement here
         System.out.println("<<< Employee menu >>>");

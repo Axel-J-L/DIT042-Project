@@ -15,12 +15,12 @@ public class DartController {
 
     public static void DartController() {
 
-            System.out.println("<<< Main Menu >>>");
+            System.out.println("Main Menu:");
             System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up! \n");
-            System.out.println("Please specify your role by entering one of the options given:");
-            System.out.println("1. Enter \"M\" for DartSystem.Manager ");
-            System.out.println("2. Enter \"E\" for DartSystem.Employee");
-            System.out.println("3. Enter \"C\" for DartSystem.Customer");
+            // Poking fun at Steam, huh.
+            System.out.println("1. Enter \"M\" for Manager ");
+            System.out.println("2. Enter \"E\" for Employee");
+            System.out.println("3. Enter \"C\" for Customer");
             System.out.println("4. Enter \"X\" to exit system");
 
             String[] mainMenuAcceptSet = {"M","m","E","e","C","c","X","x"}; // Accepted responses for menu options
@@ -30,25 +30,13 @@ public class DartController {
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    Helper mAuth = new Helper();
-                    String authSuccess = mAuth.Authenticator();
-
-                    if (authSuccess.equals("success")) {
-                        Manager manage = new Manager();
-                        manage.managerMenu();
-                    } else {
-
-                        System.out.println("\n*** Wrong password *** \n");
-
-                        DartController();
-                    }
+                    Manager.authManager(); // Moved authManager() to Manager class. Let's have classes to do their own stuff. (Altan)
                     break;
                 case "e":
                     Employee.employeeMenu();
-//                    System.out.println("Let's Go to Employee section");
                     break;
                 case "c":
-                    System.out.println("Let's Go to Customer section");
+                    Customer.customerMenu();
                     break;
                 case "x":
                     System.out.println("Exiting system ...");

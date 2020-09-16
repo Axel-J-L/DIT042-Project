@@ -2,32 +2,18 @@ package DartSystem;
 
 import java.util.*;
 import java.io.*;
-/**
- * 
- */
-public class Helper {
 
-    /**
-     * Default constructor
-     */
+public class Helper {
 
     String userInput;
 
+    //Default Constructor
     public Helper() {
     }
 
-//Trying out an array list for adding and removing users. Axel
-    public static void arrList(){
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<String> users = new ArrayList<>();
-
-    }
-    /**
-     *
-     */
 
     // THIS ONE IS SUPER USEFUL USE IT! something with opening and closing the scanner break swapping between menus (Drake)
-    public static String getInput(String message) { // Method to get string input from user and return
+    public String getInput(String message) { // Method to get string input from user and return
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
@@ -38,7 +24,7 @@ public class Helper {
     }
 
     // made this to get integers instead of String (Drake)
-    public static int getInt(String message) { // Method to get string input from user and return
+    public int getInt(String message) { // Method to get string input from user and return
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
@@ -72,9 +58,6 @@ public class Helper {
         return this.userInput; // Returns user's menu choice back to called class
     }
 
-    /**
-     *
-     */
     public void printArray(String[] pArray[]) {
 
         for (String[] element : pArray) {
@@ -86,7 +69,7 @@ public class Helper {
 
     // asks for password and then returns value
     // (would like to implement authentication and hide password)
-    public static String Password() { //this is to implement passwords and password protection (D)
+    public String Password() { //this is to implement passwords and password protection (D)
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print("Password: "); // hide password input
         String userPass = scanner.nextLine();

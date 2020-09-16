@@ -2,34 +2,14 @@ package DartSystem;
 
 import java.util.*;
 
-/**
- * 
- */
 public class Customer {
+    String customerId;
+    String name;
 
+    // Default Constructor
+    public Customer() {
+    }
 
-//    /**
-//     * Default constructor
-//     */
-//    public Customer() {
-//    }
-//
-//    /**
-//     *
-//     */
-//    String customerId;
-//
-//    /**
-//     *
-//     */
-//    String name;
-//
-//
-//
-//
-//    /**
-//     *
-//     */
     public static void customerMenu() {
         System.out.println("\nCustomer Screen - Type one of the options below:");
         System.out.println("1. Rent a game");
@@ -55,19 +35,14 @@ public class Customer {
                 System.out.println("no match");
         }
     }
-//
-//    /**
-//     *
-//     */
-//    public void addCustomer() {
-//        // TODO implement here
-//    }
-//
-//    /**
-//     *
-//     */
-//    public void removeCustomer() {
-//        // TODO implement here
-//    }
+
+    public void addCustomer() {
+        // TODO implement here
+    }
+
+
+    public void removeCustomer() {
+        // TODO implement here
+    }
 
 }

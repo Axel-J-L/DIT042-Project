@@ -2,23 +2,20 @@ package DartSystem;
 // Hey this is a demonstration for commit (D)
 import java.util.*;
 import java.time.Year;
-/**
- * 
- */
+
 public class Employee {
 
-    // Dont think we need an employee method atleast at the moment (D)
-//    public Employee() {
-//    }
+   public Employee() {
+    }
 
-  //  public object ArrayList employees;
 
-    public String employeeId;
-    public String name;
-    public String password = "password123";
-    public int birthYear;
-    public String address;
-    public int salary;
+
+    String employeeId;
+    String name;
+    String password = "password123";
+    int birthYear;
+    String address;
+    int salary;
 
 
 
@@ -66,9 +63,7 @@ public class Employee {
         }
     }
 
-    /**
-     * 
-     */
+
     public void addEmployee() {
         // TODO implement here
         // I think this might actually need to use the object employee to create new employees
@@ -123,12 +118,6 @@ public class Employee {
 
 
 
-
-    }
-
-    /**
-     * 
-     */
     public void authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
         // TODO implement here
 
@@ -138,9 +127,7 @@ public class Employee {
 
     }
 
-    /**
-     * 
-     */
+
     public void removeEmployee() {
         // TODO implement here
         Helper input=new Helper();
@@ -150,9 +137,7 @@ public class Employee {
 
     }
 
-    /**
-     * 
-     */
+
     public void viewAll() {
         // TODO implement here
     }

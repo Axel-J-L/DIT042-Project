@@ -6,9 +6,7 @@ import java.lang.*;
 import java.net.Authenticator;
 import java.util.Scanner;
 
-/**
- * 
- */
+
 public class Launcher {
 	
     public static void main(String[] args) {
@@ -28,20 +26,9 @@ public class Launcher {
 
     }
 
-    /**
-     * Default constructor
-     */
+    // Default Constructor
     public Launcher() {
     }
-
-    /**
-     * 
-     */
-
-
-    /**
-     * 
-     */
 
 
 }

@@ -1,13 +1,8 @@
 package DartSystem;
 
-/**
- * 
- */
 public class Manager {
 
-    /**
-     * Default constructor
-     */
+    // Default Constructor
     public Manager() {
     }
 
@@ -39,10 +34,7 @@ public class Manager {
     }
 
 
-    /**
-     *
-     */
-    public static String password = "admin1234";
+    public String password = "admin1234";
     // manager password to use when authenticating for manager menu (D)
     public static void authManager() { //this checks the manager password. more to be added. (drake)
         // TODO implement here

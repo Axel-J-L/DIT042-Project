@@ -142,13 +142,9 @@ public class Employee {
         // TODO implement here
     }
 
-    /**
-     * @param totalSalary 
-     * @param netSalary
 
-    public void salary(void totalSalary, void netSalary) {
+    public void salary() {
         // TODO implement here
     }
-     */
 
 }

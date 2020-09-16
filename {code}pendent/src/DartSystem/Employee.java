@@ -75,18 +75,51 @@ public class Employee {
         // this would just mean changing the variables we declared here to be the ones stated in
         // lines 16-21 (D)
         int empBirth=1;
-        int age=1;
+       // int age=1;
         Helper input = new Helper();
         String askName = "Employee name: ";
         String empName = input.getInput(askName);
         String askBirthYear = "Employee birth year: ";
-        // empBirth=input.getInt(askBirthYear);
+        empBirth=input.getInt(askBirthYear);
+        int currentYear=2020;
+        int age=empBirth-currentYear;
+
         //  Year birthYear=input.next();
-       // Year currentYear=Year.now();
+       //Year currentYear=Year.now();
          //age=currentYear.minus(empBirth);
         // should fix it later
         String askSalary=("Ask the Gross salary: ");
         int grossSalary=input.getInt(askSalary);
+        double netSalary=0;
+
+            if(grossSalary<100000) {
+            netSalary=grossSalary;
+           // System.out.print("Employee's net salary is " + grossSalary+" SEK");
+        } else  {
+           if (grossSalary>=100000){
+                netSalary=grossSalary-((30.0/100)*grossSalary);
+              // System.out.print("Employee's net salary is "+grossSalary+" SEK");
+            }
+        }
+        double bonus;
+        if(age<22) {
+            bonus = 4000;
+            netSalary = netSalary + bonus;
+            System.out.print("Employee's net salary ith bonus :"+netSalary);
+        }else
+            if(age==22&&age<30){
+                bonus=6000;
+                netSalary=netSalary+bonus;
+                System.out.print("Employee's net salary with bonus :"+netSalary);
+            }else
+                if(age>30) {
+                    bonus = 7500;
+                    netSalary = netSalary + bonus;
+                    System.out.print("Employee's net salary with bonus :"+netSalary);
+                }
+
+           }
+        //int Salary;
 
 
 

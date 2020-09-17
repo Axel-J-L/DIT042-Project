@@ -3,6 +3,7 @@ package DartSystem;
 import java.util.*;
 
 public class Customer {
+  
     String customerId;
     String name;
 
@@ -38,11 +39,14 @@ public class Customer {
 
     public void addCustomer() {
         // TODO implement here
+        System.out.println("Add a customer here");
     }
+
 
 
     public void removeCustomer() {
         // TODO implement here
+        System.out.println("Remove a customer here");
     }
 
 }

@@ -31,31 +31,33 @@ public class Employee {
         Helper getInput = new Helper(); // Getting new object from Helper /A
         String userInput = getInput.getMenuInput("Please enter your choice: ", employeeMenuAcceptSet); // using argument to call Helper method/A
 
-        switch(userInput.toLowerCase())
-        {
-            case "a":
+        switch (userInput.toLowerCase()) {
+            case "a" -> {
                 System.out.println("Register a game");
-                break;
-            case "b":
+                Game.addNewGame();
+            }
+            case "b" -> {
                 System.out.println("Remove game");
-                break;
-            case "c":
+                Game.removeGame();
+            }
+            case "c" -> {
                 System.out.println("Register a customer");
-                break;
-            case "d":
+                Customer.addCustomer();
+            }
+            case "d" -> {
                 System.out.println("Remove customer: ");
-                break;
-            case "e":
-                System.out.println("Show total rent profit");
-                break;
-            case "f":
+                Customer.removeCustomer();
+            }
+            case "e" -> System.out.println("Show total rent profit");
+            case "f" -> {
                 System.out.println("View all games: ");
-                break;
-            case "r":
+                Game.viewAll();
+            }
+            case "r" -> {
                 System.out.println("Return to main menu: ");
-                break;
-            default:
-                System.out.println("no match");
+                DartController.DartController();
+            }
+            default -> System.out.println("no match");
         }
     }
 
@@ -147,11 +149,12 @@ public class Employee {
 
 
     }
-
-
-    public void viewAll() {
-        //                                    TODO
-        // once we make the array this just needs to run through the array and print all valid elements. (D)
+    /**
+     * 
+     */
+    public static void viewEmployees() {
+        // TODO implement here
+        System.out.println("These are all the employees: ");
     }
 
 

@@ -142,7 +142,7 @@ public class Employee {
         // implement a method to remove employee's from the employee array
         Helper input=new Helper();
         String removeName = "Which user would you like to remove: ";
-        // add a function to print ID's i believe
+        // add a function to print ID's I believe
         this.name = input.getInput(removeName);
 
 

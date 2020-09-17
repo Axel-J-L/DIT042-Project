@@ -69,15 +69,13 @@ public class Employee {
         // I think this might actually need to use the object employee to create new employees
         // this would just mean changing the variables we declared here to be the ones stated in
         // lines 16-21 (D)
-        int empBirth=1;
-       // int age=1;
         Helper input = new Helper();
         String askName = "Employee name: ";
-        String empName = input.getInput(askName);
+        this.name = input.getInput(askName);
         String askBirthYear = "Employee birth year: ";
-        empBirth=input.getInt(askBirthYear);
+        this.birthYear=input.getInt(askBirthYear);
         int currentYear=2020;
-        int age=empBirth-currentYear;
+        int age=birthYear-currentYear;
 
         //  Year birthYear=input.next();
        //Year currentYear=Year.now();
@@ -100,7 +98,7 @@ public class Employee {
         if(age<22) {
             bonus = 4000;
             netSalary = netSalary + bonus;
-            System.out.print("Employee's net salary ith bonus :"+netSalary);
+            System.out.print("Employee's net salary with bonus :"+netSalary);
         }else
             if(age==22&&age<30){
                 bonus=6000;

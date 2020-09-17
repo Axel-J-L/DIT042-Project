@@ -1,20 +1,17 @@
 package DartSystem;
 // Hey this is a demonstration for commit (D)
 import java.util.*;
-import java.time.Year;
 
 public class Employee {
 
    public Employee() {
     }
 
-
-
-    String employeeId;
+    UUID employeeId;
     String name;
     int birthYear;
     String address;
-    int salary;
+    int grossSalary;
 
 
 
@@ -64,24 +61,32 @@ public class Employee {
 
 
     public void addEmployee() {
-        // TODO implement here
-        // I think this might actually need to use the object employee to create new employees
-        // this would just mean changing the variables we declared here to be the ones stated in
-        // lines 16-21 (D)
-        Helper input = new Helper();
+        /*
+                                        TODO list
+        1. eventually move the salary portion (great work, looks super good!) to the salary method (D)
+        2. add the portion that inserts the created employee into an array (D)
+         */
+
+        // changed the variables to be the class ones :D (D)
+        //
+        Helper input = new Helper(); // Create new Helper object
+
+        // generate a ID and ask for employee name & stores the name
+        this.employeeId = UUID.randomUUID();
         String askName = "Employee name: ";
         this.name = input.getInput(askName);
+
+        // asks for birth year then subtracts that from currentYear (we ideally want to make this represent the current year)
+        // then calculates age
         String askBirthYear = "Employee birth year: ";
         this.birthYear=input.getInt(askBirthYear);
-        int currentYear=2020;
+        int currentYear = 2020;
         int age=birthYear-currentYear;
 
-        //  Year birthYear=input.next();
-       //Year currentYear=Year.now();
-         //age=currentYear.minus(empBirth);
-        // should fix it later
+        // asks for gross salary and using the method below will generate net salary;
         String askSalary=("Ask the Gross salary: ");
-        int grossSalary=input.getInt(askSalary);
+        int employeeGrossSalary=input.getInt(askSalary);
+        this.grossSalary = employeeGrossSalary; // I think this is correct but i could be wrong (D)
         double netSalary=0;
 
             if(grossSalary<100000) {
@@ -133,17 +138,20 @@ public class Employee {
 
 
     public void removeEmployee() {
-        // TODO implement here
+        //                  TODO
+        // implement a method to remove employee's from the employee array
         Helper input=new Helper();
-        String nameRemove = "Which user would you like to remove?: ";
-        String empName = input.getInput(nameRemove);
+        String removeName = "Which user would you like to remove: ";
+        // add a function to print ID's i believe
+        this.name = input.getInput(removeName);
 
 
     }
 
 
     public void viewAll() {
-        // TODO implement here
+        //                                    TODO
+        // once we make the array this just needs to run through the array and print all valid elements. (D)
     }
 
 

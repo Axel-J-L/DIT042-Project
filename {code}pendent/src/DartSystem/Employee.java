@@ -16,7 +16,7 @@ public class Employee {
 
 
     // I think the employeeMenu might be better in the DartController class (D)
-    public static void employeeMenu() {
+    public void employeeMenu() {
         // TODO make not static
         // Finished for the moment
         System.out.println("<<< Employee menu >>>");
@@ -142,9 +142,9 @@ public class Employee {
 
     public void removeEmployee() {
         // TODO implement a method to remove employee's from the employee array
+        // add a function to print name followed by ID so that you can see the ID associated with employee when removing-(D)
         Helper input=new Helper();
-        String removeName = "Which user would you like to remove: ";
-        // add a function to print ID's I believe -(D)
+        String removeName = "Type ID to remove associated employee: ";
         this.name = input.getInput(removeName);
 
 

@@ -9,6 +9,7 @@ public class DartController {
 
     // Default Constructor
     public static void DartController() {
+        // TODO make not static
 
             System.out.println("Main Menu:");
             System.out.println("Welcome to DART, your good old game rental system. The competition has no steam to keep up! \n");

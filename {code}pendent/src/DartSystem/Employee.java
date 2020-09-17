@@ -17,6 +17,7 @@ public class Employee {
 
     // I think the employeeMenu might be better in the DartController class (D)
     public static void employeeMenu() {
+        // TODO make not static
         // Finished for the moment
         System.out.println("<<< Employee menu >>>");
         System.out.println("Employee screen - Type one of the options below:");
@@ -64,13 +65,11 @@ public class Employee {
 
     public void addEmployee() {
         /*
-                                        TODO list
-        1. eventually move the salary portion (great work, looks super good!) to the salary method (D)
-        2. add the portion that inserts the created employee into an array (D)
+        TODO eventually move the salary portion (great work, looks super good!) to the salary method (D)
+         add the portion that inserts the created employee into an array (D)
          */
 
         // changed the variables to be the class ones :D (D)
-        //
         Helper input = new Helper(); // Create new Helper object
 
         // generate a ID and ask for employee name & stores the name
@@ -90,7 +89,8 @@ public class Employee {
         int employeeGrossSalary=input.getInt(askSalary);
         this.grossSalary = employeeGrossSalary; // I think this is correct but i could be wrong (D)
         double netSalary=0;
-
+        // TODO move this to a salary method its down at the bottom
+        //  (Navya I believe you made this let me know if you think this is a good idea -(D)
             if(grossSalary<100000) {
             netSalary=grossSalary;
            // System.out.print("Employee's net salary is " + grossSalary+" SEK");
@@ -123,7 +123,8 @@ public class Employee {
 
 
     public String authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
-        // TODO implement here
+                                    // ill take it look at it @(A) - (D)
+        // TODO get fully fuctioning with no errors (see above comments)
         String password = "password123";
         Helper Authorize = new Helper();
         String authCheck = Authorize.Authenticator(password);
@@ -140,11 +141,10 @@ public class Employee {
 
 
     public void removeEmployee() {
-        //                  TODO
-        // implement a method to remove employee's from the employee array
+        // TODO implement a method to remove employee's from the employee array
         Helper input=new Helper();
         String removeName = "Which user would you like to remove: ";
-        // add a function to print ID's I believe
+        // add a function to print ID's I believe -(D)
         this.name = input.getInput(removeName);
 
 
@@ -153,7 +153,8 @@ public class Employee {
      * 
      */
     public static void viewEmployees() {
-        // TODO implement here
+        // TODO make not static
+        // TODO Create a loop that runs through the employees within our array of employee obects until it hits an 'empty' slot
         System.out.println("These are all the employees: ");
     }
 

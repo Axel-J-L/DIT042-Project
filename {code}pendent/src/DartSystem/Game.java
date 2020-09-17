@@ -40,6 +40,7 @@ public class Game {
         this.status = gameStatus;
     }
 
+    // TODO Just adding a note to remove this main later once we clean up the project code (D)
     public static void main(String[] args) {
         // create array of games
         // ArrayList<Game> listOfGames = new ArrayList<>();
@@ -52,6 +53,7 @@ public class Game {
      *
      */
     public static void addNewGame() {
+        // TODO make not static
         Scanner newGameInput = new Scanner(System.in); //Opened scanner here as 3 inputs are required so I think it isn't best to open scanner for each one in helper..
 
         System.out.print("Title of Game? :  ");
@@ -84,7 +86,7 @@ public class Game {
      *
      */
     public static void removeGame() {
-
+        // TODO make not static
         // TODO implement here
         System.out.println("Remove a game");
     }
@@ -101,6 +103,7 @@ public class Game {
 
 
     public static void viewGames(Game[] games) {
+        // TODO make not static
         // TODO implement here
         System.out.println("Updated game list:");
         for (Game game : games) {
@@ -109,6 +112,7 @@ public class Game {
         }
     }
     public static void viewAll() {
+        // TODO make not static
         // TODO implement here
         System.out.println("Games:");
         for (Game game : games) {

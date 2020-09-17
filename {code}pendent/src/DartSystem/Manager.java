@@ -1,62 +1,54 @@
 package DartSystem;
 
-/**
- * 
- */
 public class Manager {
 
-    /**
-     * Default constructor
-     */
+    // Default Constructor
     public Manager() {
     }
 
-    /**
-     *fskald
-     */
+ // I think this menu might be better to have in the DartController class (D)
     public static void managerMenu() {
-        // TODO implement here
-        System.out.println("<<< Manager Menu >>>");
-        System.out.println("Manager Screen - Type one of the options below:");
-        System.out.println("1. Enter \"A\" to add an employee ");
-        System.out.println("2. Enter \"B\" to view all employee's");
-        // System.out.println("3. Enter \"C\" to go to Employee Menu"); //comment not in requirements consider removing
-        System.out.println("4. Enter \"R\" to return to Main Menu");
+        System.out.println("\nManager Screen - Type one of the options below:");
+        System.out.println("1. Add an employee");
+        System.out.println("2. View all employees");
+        System.out.println("3. Return to Main Menu");
 
-        String[] managerMenuAcceptSet = {"a", "A", "b", "B", "c", "C", "r", "R"}; // Accepted responses for menu options
+        String[] managerMenuAcceptSet = {"1", "2", "3"}; // Accepted responses for menu options
         Helper input = new Helper(); // Creating new Helper object
-        String mInput = input.getMenuInput("Please enter your choice: ", managerMenuAcceptSet); // Calling Helper method
+        String mInput = input.getMenuInput("Please enter your option: ", managerMenuAcceptSet); // Calling Helper method
 
         switch(mInput.toLowerCase())
         {
-            case "a":
-                    System.out.println("Let's add and employee!!!"); //testing manager menu
+            case "1":
+                System.out.println("Let's add and employee!!!"); //testing manager menu
                 break;
-            case "b":
+            case "2":
                 System.out.println("Let's view all employee");
                 Employee.viewEmployees();
                 break;
-  /*          case "c":
-                Employee.employeeMenu();
-                break; */
-            case "r":
-                DartController.DartController();
-                break;
+            case "3":
+                System.out.println("main menu");
             default:
                 System.out.println("no match");
         }
     }
 
 
-    /**
-     *
-     */
-    public static String password = "admin1234";
-    // manager password to use when authenticating for manager menu (D)
-    public void authManager() { //this checks the manager password. more to be added. (drake)
+    //  changed this password authenticator to work for both employee and manager and customer if needed later. (d)
+    //had to remove reference to menus at this time since the menus are currently static (d)
+    public String authManager(){
         // TODO implement here
-        Helper input = new Helper();
-        String response = input.Password();
+            String password = "admin1234";
+            Helper Authorize = new Helper();
+            String authCheck = Authorize.Authenticator(password);
+
+        if (authCheck.equals("success")){
+            return "manager menu"; // this needs to return the manager menu but because of static menus it cant (D)
+        } else {
+            System.out.println("\n*** Wrong password *** \n");
+
+            return "main menu"; // this needs to return the manager menu but because of static menus it cant (D)
+        }
     }
 }
 //

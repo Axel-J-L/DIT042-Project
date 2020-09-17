@@ -3,7 +3,6 @@ package DartSystem;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.UUID;
-
 /**
  *
  */
@@ -85,6 +84,7 @@ public class Game {
      *
      */
     public static void removeGame() {
+
         // TODO implement here
         System.out.println("Remove a game");
     }

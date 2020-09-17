@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class Customer {
 
+
     /**
      * Default constructor
      */
@@ -23,7 +24,9 @@ public class Customer {
      */
     String name;
 
-
+    public static void main() {
+        System.out.println("Welcome to Customer page");
+    }
 
 
     /**
@@ -36,15 +39,17 @@ public class Customer {
     /**
      * 
      */
-    public void addCustomer() {
+    public static void addCustomer() {
         // TODO implement here
+        System.out.println("Add a customer here");
     }
 
     /**
      * 
      */
-    public void removeCustomer() {
+    public static void removeCustomer() {
         // TODO implement here
+        System.out.println("Remove a customer here");
     }
 
 }

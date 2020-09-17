@@ -26,29 +26,27 @@ public class Manager {
                 System.out.println("Let's view all employee");
                 break;
             case "3":
-                DartController.DartController();
-                break;
+                System.out.println("main menu");
             default:
                 System.out.println("no match");
         }
     }
 
 
-    public String password = "admin1234";
-    // manager password to use when authenticating for manager menu (D)
-    public static void authManager() { //this checks the manager password. more to be added. (drake)
+    //  changed this password authenticator to work for both employee and manager and customer if needed later. (d)
+    //had to remove reference to menus at this time since the menus are currently static (d)
+    public String authManager(){
         // TODO implement here
+            String password = "admin1234";
+            Helper Authorize = new Helper();
+            String authCheck = Authorize.Authenticator(password);
 
-        Helper mAuth = new Helper();
-        String authSuccess = mAuth.Authenticator();
-
-        if (authSuccess.equals("success")) {
-            Manager.managerMenu();
+        if (authCheck.equals("success")){
+            return "manager menu"; // this needs to return the manager menu but because of static menus it cant (D)
         } else {
-
             System.out.println("\n*** Wrong password *** \n");
 
-            DartController.DartController();
+            return "main menu"; // this needs to return the manager menu but because of static menus it cant (D)
         }
     }
 }

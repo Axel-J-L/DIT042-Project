@@ -12,7 +12,6 @@ public class Employee {
 
     String employeeId;
     String name;
-    String password = "password123";
     int birthYear;
     String address;
     int salary;
@@ -116,13 +115,20 @@ public class Employee {
 
 
 
-    public void authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
+    public String authEmployee() { //Checks and uses the Authenticator method from help class. Returns false if !=password (A)
         // TODO implement here
+        String password = "password123";
+        Helper Authorize = new Helper();
+        String authCheck = Authorize.Authenticator(password);
 
-        Helper passScan = new Helper();
-        String userResponse = passScan.Password();
+        if (authCheck.equals("success")){
+            return "employee menu";
+        } else {
 
+            System.out.println("\n*** Wrong password *** \n");
 
+            return "main menu";
+        }
     }
 
 

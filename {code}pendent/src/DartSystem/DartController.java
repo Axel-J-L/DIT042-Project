@@ -25,7 +25,8 @@ public class DartController {
             switch(userInput.toLowerCase())
             {
                 case "m":
-                    Manager.authManager(); // Moved authManager() to Manager class. Let's have classes to do their own stuff. (Altan)
+                    // Manager.authManager(); // Moved authManager() to Manager class. Let's have classes to do their own stuff. (Altan)
+                    System.out.println("prompts manager authorization"); // we cant access the authManger yet due to static's (Drake)
                     break;
                 case "e":
                     Employee.employeeMenu();

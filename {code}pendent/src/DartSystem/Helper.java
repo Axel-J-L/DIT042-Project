@@ -67,33 +67,29 @@ public class Helper {
         // TODO implement here
     }
 
-    // asks for password and then returns value
-    // (would like to implement authentication and hide password)
-    public String Password() { //this is to implement passwords and password protection (D)
-        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Password: "); // hide password input
-        String userPass = scanner.nextLine();
-        scanner.close(); // Close scanner
-        return userPass;  // Output user input
-    }
+//    // asks for password and then returns value
+//    // (would like to implement authentication and hide password)
+//    public String Password() { //this is to implement passwords and password protection (D)
+//        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+//        System.out.print("Password: "); // hide password input
+//        String userPass = scanner.nextLine();
+//        scanner.close(); // Close scanner
+//        return userPass;  // Output user input
+//    }
 
-    public String Authenticator() { // authenticates passwords
-
-        String authSuccess;
-        String ePassword = "password123";
-        String mPassword = "admin1234";
-
-        ePassword = getInput("Enter your password: ");
+    public String Authenticator(String password) { // authenticates passwords
+        String authCheck;
+        String enteredPassword = getInput("Enter your password: ");
 
         // checks both the manager and the employee passwords to see if you entered correct
         // I think it will work but not 100% sure (D)
-        if (mPassword.equals(ePassword)) {
-            authSuccess = "success";
+        if (password.equals(enteredPassword)) {
+            authCheck = "success";
         } else {
-            authSuccess = "nogood";
+            authCheck = "nogood";
         }
 
-        return authSuccess;
+        return authCheck;
     }
 
     // Drake, let's add this on Employee Class. Let the each class to do their own specific actions.

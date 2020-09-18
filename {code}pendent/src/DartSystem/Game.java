@@ -14,7 +14,7 @@ public class Game {
     private final double rentCost;
     private final String status;
 
-    private static final Game[] games = { new Game("It is what it is", "Comedy", 12, "Not Available"),
+    private static Game[] games = { new Game("It is what it is", "Comedy", 12, "Not Available"),
             new Game("Brainfreeze", "Comedy", 12, "Available"),
             new Game("Give and take", "Comedy", 12, "Not Available"),
             new Game("Pineapples", "Comedy", 12, "Available") };
@@ -72,13 +72,15 @@ public class Game {
         }
 
         gamesNew[games.length] = new Game(newGameTitle, newGameGenre, newGameRentCost);
-        System.out.println("Game Added Successfully : " + "\n" + gamesNew[gamesNew.length - 1].id + " : " + gamesNew[gamesNew.length - 1].title + " (" + gamesNew[gamesNew.length - 1].genre + "). " + gamesNew[gamesNew.length - 1].rentCost
-                + "kr. " + "Status: " + gamesNew[gamesNew.length - 1].status + "\n");
+        games = gamesNew;
 
-        viewGames(gamesNew);
+        System.out.println("Game Added Successfully : " + "\n" + games[games.length - 1].id + " : " + games[games.length - 1].title + " (" + games[games.length - 1].genre + "). " + games[games.length - 1].rentCost
+                + "kr. " + "Status: " + games[games.length - 1].status + "\n");
+
+        viewGames(games);
         System.out.println("Press enter to go back to Employee menu");
         newGameInput.nextLine();
-        newGameInput.close();
+      //  newGameInput.close();
         Employee.employeeMenu();
     }
 

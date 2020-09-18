@@ -1,11 +1,12 @@
 package DartSystem;
 //d
 
+import java.time.Year;
 import java.util.*;
 import java.io.*;
 
 public class Helper {
-
+    public static final int CURRENT_YEAR = Year.now().getValue();
     public static Scanner input = new Scanner(System.in); // static scanner
     String userInput;
 

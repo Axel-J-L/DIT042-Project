@@ -1,12 +1,14 @@
 package DartSystem;
 // Hey this is a demonstration for commit (D)
+import java.time.Year;
 import java.util.*;
 
 public class Employee {
 
    public Employee() {
     }
-
+    Employee[] employeeDB;
+    Employee[] employeeBridge;
     UUID employeeId;
     String name;
     int birthYear;
@@ -71,7 +73,7 @@ public class Employee {
 
         // changed the variables to be the class ones :D (D)
         Helper input = new Helper(); // Create new Helper object
-
+        // java method to extract current year and java method to convert that value to a int - (d)
         // generate a ID and ask for employee name & stores the name
         this.employeeId = UUID.randomUUID();
         String askName = "Employee name: ";
@@ -81,8 +83,8 @@ public class Employee {
         // then calculates age
         String askBirthYear = "Employee birth year: ";
         this.birthYear=input.getInt(askBirthYear);
-        int currentYear = 2020;
-        int age=birthYear-currentYear;
+        Helper year = new Helper();
+        int age=year.CURRENT_YEAR-birthYear;
 
         // asks for gross salary and using the method below will generate net salary;
         String askSalary=("Ask the Gross salary: ");
@@ -101,17 +103,17 @@ public class Employee {
             }
         }
         double bonus;
-        if(age<22) {
+        if(age<22) { // change to not be magic numbers instead constant - (n)
             bonus = 4000;
             netSalary = netSalary + bonus;
             System.out.print("Employee's net salary with bonus :"+netSalary);
         }else
-            if(age==22&&age<30){
+            if(age==22&&age<30){ // change to not be magic numbers instead constant - (n)
                 bonus=6000;
                 netSalary=netSalary+bonus;
                 System.out.print("Employee's net salary with bonus :"+netSalary);
             }else
-                if(age>30) {
+                if(age>30) { // change to not be magic numbers instead constant - (n)
                     bonus = 7500;
                     netSalary = netSalary + bonus;
                     System.out.print("Employee's net salary with bonus :"+netSalary);

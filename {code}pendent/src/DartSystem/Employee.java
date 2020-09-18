@@ -1,5 +1,6 @@
 package DartSystem;
 // Hey this is a demonstration for commit (D)
+import java.time.Year;
 import java.util.*;
 
 public class Employee {
@@ -71,7 +72,7 @@ public class Employee {
 
         // changed the variables to be the class ones :D (D)
         Helper input = new Helper(); // Create new Helper object
-
+        int currentYear = Year.now().getValue(); // java method to extract current year and java method to convert that value to a int - (d)
         // generate a ID and ask for employee name & stores the name
         this.employeeId = UUID.randomUUID();
         String askName = "Employee name: ";
@@ -81,7 +82,6 @@ public class Employee {
         // then calculates age
         String askBirthYear = "Employee birth year: ";
         this.birthYear=input.getInt(askBirthYear);
-        int currentYear = 2020;
         int age=birthYear-currentYear;
 
         // asks for gross salary and using the method below will generate net salary;

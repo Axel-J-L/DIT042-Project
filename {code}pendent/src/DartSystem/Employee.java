@@ -7,7 +7,8 @@ public class Employee {
 
    public Employee() {
     }
-
+    Employee[] employeeDB;
+    Employee[] employeeBridge;
     UUID employeeId;
     String name;
     int birthYear;

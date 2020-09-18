@@ -30,7 +30,7 @@ public class DartController {
                     System.out.println("prompts manager authorization"); // we cant access the authManger yet due to static's (Drake)
                     break;
                 case "e":
-                    Employee.employeeMenu();
+//                    Employee.employeeMenu();
                     break;
                 case "c":
                     Customer.customerMenu();

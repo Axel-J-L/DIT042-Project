@@ -112,10 +112,8 @@ public class Helper {
             newEmployeeArr[i] = array[i]; // copys the information from fed in array to newEmployee array
         }
         return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
+
     }
-    /*==================================================================*/
-
-
 }
 
 

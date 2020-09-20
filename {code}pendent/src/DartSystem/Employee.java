@@ -16,6 +16,11 @@ public class Employee {
     double grossSalary;
 
 
+    public static final double MIN_SALARY=100000.00;
+    public static final double  BONUS_ONE=4000.00;
+    public static final double BONUS_TWO=6000.00;
+    public static final double BONUS_THREE=7500.00;
+
 
     public Employee(String name, int birthYear, String address, double salary) {
         this.name = name;
@@ -90,19 +95,21 @@ public class Employee {
 
         // asks for birth year then subtracts that from currentYear (we ideally want to make this represent the current year)
         // then calculates age
-        String askBirthYear = "Employee birth year: ";
-        this.birthYear=input.getInt(askBirthYear);
-        Helper year = new Helper();
-        int age=year.CURRENT_YEAR-birthYear;
+        //I have  made the salary section into a method.(n)
+    //   String askBirthYear = "Employee birth year: ";
+      //  this.birthYear=input.getInt(askBirthYear);
+        //Helper year = new Helper();
+        //int age=year.CURRENT_YEAR-birthYear;
+
 
         // asks for gross salary and using the method below will generate net salary;
-        String askSalary=("Ask the Gross salary: ");
-        int employeeGrossSalary=input.getInt(askSalary);
-        this.grossSalary = employeeGrossSalary; // I think this is correct but i could be wrong (D)
-        double netSalary=0;
+        //String askSalary=("Ask the Gross salary: ");
+        //int employeeGrossSalary=input.getInt(askSalary);
+        //this.grossSalary = employeeGrossSalary; // I think this is correct but i could be wrong (D)
+        //double netSalary=0;
         // TODO move this to a salary method its down at the bottom
         //  (Navya I believe you made this let me know if you think this is a good idea -(D)
-            if(grossSalary<100000) {
+         /* if(grossSalary<100000) {
             netSalary=grossSalary;
            // System.out.print("Employee's net salary is " + grossSalary+" SEK");
         } else  {
@@ -126,7 +133,7 @@ public class Employee {
                     bonus = 7500;
                     netSalary = netSalary + bonus;
                     System.out.print("Employee's net salary with bonus :"+netSalary);
-                }
+                }*/
 
            }
         //int Salary;
@@ -184,8 +191,43 @@ public class Employee {
     }
 
 
+
     public void salary() {
+        Helper input = new Helper();
+        String askBirthYear = "Employee birth year: ";
+        this.birthYear=input.getInt(askBirthYear);
+        Helper year = new Helper();
+        int age=year.CURRENT_YEAR-birthYear;
+        double netSalary=0;
+
+       //public static final double MIN_SALARY=100000.00;
+        if(grossSalary<MIN_SALARY) {
+            netSalary=grossSalary;
+
+        } else  {
+            if (grossSalary>=MIN_SALARY) {
+                netSalary = grossSalary - ((30.0 / 100) * grossSalary);
+            }
+        }
+        double bonus;
+        if(age<22) { // change to not be magic numbers instead constant - (n)
+            bonus = 4000;
+            netSalary = netSalary + bonus;
+            System.out.print("Employee's net salary with bonus :"+netSalary);
+        }else
+        if(age==22&&age<30){ // change to not be magic numbers instead constant - (n)
+            bonus=6000;
+            netSalary=netSalary+bonus;
+            System.out.print("Employee's net salary with bonus :"+netSalary);
+        }else
+        if(age>30) { // change to not be magic numbers instead constant - (n)
+            bonus = 7500;
+            netSalary = netSalary + bonus;
+            System.out.print("Employee's net salary with bonus :"+netSalary);
+        }
+
+    }
+
         // TODO implement here
     }
 
-}

@@ -92,6 +92,7 @@ public class Helper {
         return authCheck;
     }
 
+
     // Drake, let's add this on Employee Class. Let the each class to do their own specific actions.
     // WORK IN PROGRESS, CREATING A METHOD FOR ADDING AND REMOVING USERS //Axel n Drake
     //    public ArrayList<String> addUserList(String addUser, String addEmployee) {

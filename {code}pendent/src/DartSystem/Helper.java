@@ -1,11 +1,13 @@
 package DartSystem;
 //d
 
+import java.time.Year;
 import java.util.*;
 import java.io.*;
 
 public class Helper {
-
+    public static final int CURRENT_YEAR = Year.now().getValue();
+    public static Scanner input = new Scanner(System.in); // static scanner
     String userInput;
 
     //Default Constructor
@@ -16,9 +18,8 @@ public class Helper {
     // THIS ONE IS SUPER USEFUL USE IT! something with opening and closing the scanner break swapping between menus (Drake)
     public String getInput(String message) { // Method to get string input from user and return
 
-        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
-        String userInput = scanner.nextLine();  // Read user input
+        String userInput = input.nextLine();  // Read user input
         // scanner.close(); // Close scanner - This causes issue, leave it commented out (Altan)
         return userInput;  // Output user input
 
@@ -27,10 +28,9 @@ public class Helper {
     // made this to get integers instead of String (Drake)
     public int getInt(String message) { // Method to get string input from user and return
 
-        Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.print(message); //removed println and replaced with print (D) if we need and println version we'll make one
-        int userInput = scanner.nextInt();  // Read user input
-        scanner.nextLine();
+        int userInput = input.nextInt();  // Read user input
+        input.nextLine();
         // scanner.close(); // Close scanner - This causes issue, leave it commented out (Altan)
         return userInput;  // Output user input
 
@@ -42,9 +42,8 @@ public class Helper {
 
         // di while to loop around until user enter one of the AcceptSet characters. Anything else, just keeps looping
         do {
-            Scanner menu = new Scanner(System.in);
             System.out.print("\n" + message); // String message from called class before asking for input
-            userInput = menu.nextLine(); // Gets user input
+            userInput = input.nextLine(); // Gets user input
 
 
             for (int i = 0; i < acceptSet.length; i++) { // Loop around AcceptSet array for matching letter
@@ -92,38 +91,29 @@ public class Helper {
 
         return authCheck;
     }
-
-    // Drake, let's add this on Employee Class. Let the each class to do their own specific actions.
-    // WORK IN PROGRESS, CREATING A METHOD FOR ADDING AND REMOVING USERS //Axel n Drake
-    //    public ArrayList<String> addUserList(String addUser, String addEmployee) {
-//        Scanner input = new Scanner(System.in);
-//        ArrayList<String> user = new ArrayList<>();
-//        System.out.println("Add employee name: ");
-//        String name1= new String();
-//
-//
-//        System.out.print(addUser + "Y/N: ");
-//        String eUser = input.nextLine();
-//        eUser = eUser.toUpperCase();
-//
-//
-//        while (eUser.equals("Y")) {
-//
-//            System.out.print(addEmployee);
-//            String name = input.nextLine();
-//            user.add(name);
-//            System.out.print(addUser + "Y/N: ");
-//            eUser = input.nextLine();
-//            eUser = eUser.toUpperCase();
-//
-//
-//        }
-//        for (int i = 0; i < user.size(); i++) {
-//            System.out.println(user.get(i));
-//
-//        }
-
+    /*======================Array Increment/Decrement=======================*/
+    public Employee[] increaseEmployeeArr(Employee[] array) { //Employee[] arr is our throw away array to bridge data into Employee[] newEmployeeArr
+        Employee[] newEmployeeArr = new Employee[(int) (array.length * 1.5)]; // creates a new array that is larger then the array you feed into the method of 1.5
+        for (int i = 0; i < array.length; i++) { // loops for copying.
+            newEmployeeArr[i] = array[i]; // copys the information from fed in array to newEmployee array
+        }
+        return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
     }
 
+    public Employee[] trimArray(Employee[] array){
+        int position = 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] != null){
+                position++;
+            }
+        }
+        Employee[] newEmployeeArr = new Employee[(int) (position)];
+        for (int i = 0; i < array.length; i++) { // loops for copying.
+            newEmployeeArr[i] = array[i]; // copys the information from fed in array to newEmployee array
+        }
+        return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
+
+    }
+}
 
 

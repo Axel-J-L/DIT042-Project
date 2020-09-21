@@ -6,13 +6,11 @@ public class Employee {
 
    public Employee() {
     }
-    Employee[] employeeDB;
-
-    UUID employeeID;
-    String name;
-    int birthYear;
-    String address;
-    double grossSalary;
+    private UUID employeeID;
+    private String name;
+    private int birthYear;
+    private String address;
+    private double grossSalary;
     final public static int INITIAL_ARRAY_SIZE = 4;
     Employee[] employees =  new Employee[INITIAL_ARRAY_SIZE];
 
@@ -201,7 +199,7 @@ public class Employee {
      */
     public void viewEmployees() {
         System.out.println("These are all the employees: ");
-        for (Employee employee : employeeDB) {
+        for (Employee employee : employees) {
             if (employee == null) return;
             System.out.println(employee.toString());
         }

@@ -7,8 +7,6 @@ import java.net.Authenticator;
 import java.util.Scanner;
 
 public class Launcher {
-    final public static int INITIAL_ARRAY_SIZE = 4;
-    Employee[] employees =  new Employee[INITIAL_ARRAY_SIZE];
 
 
     public static void main(String[] args) {

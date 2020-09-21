@@ -1,5 +1,4 @@
 package DartSystem;
-// Hey this is a demonstration for commit (D)
 import java.time.Year;
 import java.util.*;
 
@@ -7,13 +6,13 @@ public class Employee {
 
    public Employee() {
     }
-    Employee[] employeeDB;
-
-    UUID employeeID;
-    String name;
-    int birthYear;
-    String address;
-    double grossSalary;
+    private UUID employeeID;
+    private String name;
+    private int birthYear;
+    private String address;
+    private double grossSalary;
+    final public static int INITIAL_ARRAY_SIZE = 4;
+    Employee[] employees =  new Employee[INITIAL_ARRAY_SIZE];
 
 
     public static final double MIN_SALARY=100000.00;
@@ -31,7 +30,6 @@ public class Employee {
 
     }
 
-    // I think the employeeMenu might be better in the DartController class (D)
     public void employeeMenu() {
         // TODO make not static
         // Finished for the moment
@@ -59,11 +57,13 @@ public class Employee {
             }
             case "c" -> {
                 System.out.println("Register a customer");
-                Customer.addCustomer();
+                Customer addNewCustomer= new Customer();
+                addNewCustomer.addCustomer();
             }
             case "d" -> {
                 System.out.println("Remove customer: ");
-                Customer.removeCustomer();
+                Customer removeOldCustomer= new Customer();
+                removeOldCustomer.removeCustomer();
             }
             case "e" -> System.out.println("Show total rent profit");
             case "f" -> {
@@ -77,29 +77,45 @@ public class Employee {
             default -> System.out.println("no match");
         }
     }
+    /*==========================Add Employee=========================*/
+        public Employee[] addEmployee(Employee employee, Employee[] employeeArr) {
+            for (int i = 0; i < employeeArr.length; i++) {
+                if (employeeArr[i] != null) {
+                    continue;
+                } else {
+                    employeeArr[i] = employee;
+                    i = employeeArr.length;
+                    //break; // I WILL FIGHT YOU
+                }
+            }
+            return employeeArr;
+        }
+    /*==========================Remove Employee=========================*/
+    public Employee[] removeEmployee(UUID employeeID, Employee[] employeeArr) {
+        for (int i = 0; i < employeeArr.length; i++) { // goes through the array fed into method
+            if (employeeArr[i] == null) continue;
+            if (!employeeArr[i].getEmployeeID().equals(employeeID)) { //  it doesnt equal our employee to remove do nothing.
+                continue;
+            } else {
+                employeeArr[i] = null; // if it does have the employee we want to remove. (Ternary statement?)
+                i = employeeArr.length;
+            }
+        }
 
+        for (int j = 0; j < employeeArr.length-1; j++) { //runs through the array
+            if (employeeArr[j] !=(null) && employeeArr[j + 1] != null) { // position j != null && position j+1 != null
+                continue; //do nothing
+            } else if (employeeArr[j] == (null) && employeeArr[j + 1] != null) { // position j = null && position j+1 !=null
+                employeeArr[j] = employeeArr[j + 1]; // position j = position j + 1\
+                employeeArr[j+1] = null;
+            } else {
+                j = employeeArr.length; // only other situation would be position j && j+1 == null which means the array has two nulls in a row
+            }
+        }
 
-    public void addEmployee() {
-        /*
-        TODO eventually move the salary portion (great work, looks super good!) to the salary method (D)
-         add the portion that inserts the created employee into an array (D)
-         */
+        return employeeArr;
+    }
 
-        // changed the variables to be the class ones :D (D)
-        Helper input = new Helper(); // Create new Helper object
-        // java method to extract current year and java method to convert that value to a int - (d)
-        // generate a ID and ask for employee name & stores the name
-        this.employeeID = UUID.randomUUID();
-        String askName = "Employee name: ";
-        this.name = input.getInput(askName);
-
-        // asks for birth year then subtracts that from currentYear (we ideally want to make this represent the current year)
-        // then calculates age
-        //I have  made the salary section into a method.(n)
-    //   String askBirthYear = "Employee birth year: ";
-      //  this.birthYear=input.getInt(askBirthYear);
-        //Helper year = new Helper();
-        //int age=year.CURRENT_YEAR-birthYear;
 
 
         // asks for gross salary and using the method below will generate net salary;
@@ -135,7 +151,6 @@ public class Employee {
                     System.out.print("Employee's net salary with bonus :"+netSalary);
                 }*/
 
-           }
         //int Salary;
 
 
@@ -184,7 +199,7 @@ public class Employee {
      */
     public void viewEmployees() {
         System.out.println("These are all the employees: ");
-        for (Employee employee : employeeDB) {
+        for (Employee employee : employees) {
             if (employee == null) return;
             System.out.println(employee.toString());
         }
@@ -195,10 +210,11 @@ public class Employee {
     public void salary() {
         Helper input = new Helper();
         String askBirthYear = "Employee birth year: ";
-        this.birthYear=input.getInt(askBirthYear);
+        this.birthYear = input.getInt(askBirthYear);
         Helper year = new Helper();
-        int age=year.CURRENT_YEAR-birthYear;
-        double netSalary=0;
+        int age = year.CURRENT_YEAR - birthYear;
+        double netSalary = 0;
+
 
        //public static final double MIN_SALARY=100000.00;
         if(grossSalary<MIN_SALARY) {
@@ -227,7 +243,5 @@ public class Employee {
         }
 
     }
-
-        // TODO implement here
-    }
+}
 

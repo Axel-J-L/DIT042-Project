@@ -30,7 +30,8 @@ public class EmployeeMenu {
             }
             case "c" -> {
                 System.out.println("Register a customer");
-                Customer.addCustomer();
+                System.out.print("brings up a menu to remove a customer");
+//                Customer.addCustomer(); // has not been implemented
             }
             case "d" -> {
                 System.out.println("Remove customer: ");

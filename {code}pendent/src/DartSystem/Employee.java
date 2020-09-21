@@ -49,11 +49,13 @@ public class Employee {
         switch (userInput.toLowerCase()) {
             case "a" -> {
                 System.out.println("Register a game");
-                Game.addNewGame();
+                Game addProcess = new Game();
+                addProcess.addNewGame();
             }
             case "b" -> {
                 System.out.println("Remove game");
-                Game.removeGame();
+                Game removeProcess = new Game();
+                removeProcess.removeGame();
             }
             case "c" -> {
                 System.out.println("Register a customer");
@@ -68,7 +70,8 @@ public class Employee {
             case "e" -> System.out.println("Show total rent profit");
             case "f" -> {
                 System.out.println("View all games: ");
-                Game.viewAll();
+                Game viewProcess = new Game();
+                viewProcess.viewAll();
             }
             case "r" -> {
                 System.out.println("Return to main menu: ");

@@ -50,11 +50,13 @@ public class Employee {
             }
             case "c" -> {
                 System.out.println("Register a customer");
-                Customer.addCustomer();
+                Customer addNewCustomer= new Customer();
+                addNewCustomer.addCustomer();
             }
             case "d" -> {
                 System.out.println("Remove customer: ");
-                Customer.removeCustomer();
+                Customer removeOldCustomer= new Customer();
+                removeOldCustomer.removeCustomer();
             }
             case "e" -> System.out.println("Show total rent profit");
             case "f" -> {
@@ -172,10 +174,11 @@ public class Employee {
     public void salary() {
         Helper input = new Helper();
         String askBirthYear = "Employee birth year: ";
-        this.birthYear=input.getInt(askBirthYear);
+        this.birthYear = input.getInt(askBirthYear);
         Helper year = new Helper();
-        int age=year.CURRENT_YEAR-birthYear;
-        double netSalary=0;
+        int age = year.CURRENT_YEAR - birthYear;
+        double netSalary = 0;
+
 
        //public static final double MIN_SALARY=100000.00;
         if(grossSalary<MIN_SALARY) {

@@ -24,7 +24,8 @@ public class Manager {
                 break;
             case "2":
                 System.out.println("Let's view all employee");
-                Employee.viewEmployees();
+                Employee viewEmployees = new Employee();
+                viewEmployees.viewEmployees();
                 break;
             case "3":
                 System.out.println("main menu");

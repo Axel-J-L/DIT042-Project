@@ -8,12 +8,13 @@ public class Employee {
    public Employee() {
     }
     Employee[] employeeDB;
-    Employee[] employeeBridge;
-    UUID employeeId;
+
+    UUID employeeID;
     String name;
     int birthYear;
     String address;
-    int grossSalary;
+    double grossSalary;
+
 
     public static final double MIN_SALARY=100000.00;
     public static final double  BONUS_ONE=4000.00;
@@ -21,6 +22,14 @@ public class Employee {
     public static final double BONUS_THREE=7500.00;
 
 
+    public Employee(String name, int birthYear, String address, double salary) {
+        this.name = name;
+        this.grossSalary = salary;
+        this.birthYear = birthYear;
+        this.address = address;
+        this.employeeID = genEmployeeUUID();
+
+    }
 
     // I think the employeeMenu might be better in the DartController class (D)
     public void employeeMenu() {
@@ -82,7 +91,7 @@ public class Employee {
         Helper input = new Helper(); // Create new Helper object
         // java method to extract current year and java method to convert that value to a int - (d)
         // generate a ID and ask for employee name & stores the name
-        this.employeeId = UUID.randomUUID();
+        this.employeeID = UUID.randomUUID();
         String askName = "Employee name: ";
         this.name = input.getInput(askName);
 
@@ -149,24 +158,38 @@ public class Employee {
             return "main menu";
         }
     }
-
-
-    public void removeEmployee() {
-        // TODO implement a method to remove employee's from the employee array
-        // add a function to print name followed by ID so that you can see the ID associated with employee when removing-(D)
-        Helper input=new Helper();
-        String removeName = "Type ID to remove associated employee: ";
-        this.name = input.getInput(removeName);
-
-
+    public String getName(){
+        return name;
     }
+    public double getSalary(){
+        return grossSalary;
+    }
+    public int getBirthYear(){
+        return birthYear;
+    }
+    public String getAddress(){
+        return address;
+    }
+    public UUID getEmployeeID() { return employeeID;}
+
+    private UUID genEmployeeUUID() {
+        return UUID.randomUUID();
+    }
+
+    public String toString(){
+        return " => Name: " + this.name + " => UUID: " + this.employeeID + "\n*---*\n";
+    }
+
+
     /**
      * 
      */
-    public static void viewEmployees() {
-        // TODO make not static
-        // TODO Create a loop that runs through the employees within our array of employee obects until it hits an 'empty' slot
+    public void viewEmployees() {
         System.out.println("These are all the employees: ");
+        for (Employee employee : employeeDB) {
+            if (employee == null) return;
+            System.out.println(employee.toString());
+        }
     }
 
 

@@ -55,49 +55,6 @@ public class DartController {
 //    public void exceptionHandler() {
 //        // TODO implement here
     }
-    /*============================Add Employee==========================*/
-    // this method you pass an array through it and it check to see whether there is
-    // a employee object in the space or null. If there is a null it will add a new employee to the position formerly
-    // occupied by null. Hello
-    public Employee[] addEmployee(Employee employee, Employee[] employeeArr) {
-        for (int i = 0; i < employeeArr.length; i++) {
-            if (employeeArr[i] != null) {
-                continue;
-            } else {
-                employeeArr[i] = employee;
-                i = employeeArr.length;
-                //break; // I WILL FIGHT YOU
-            }
-        }
-        return employeeArr;
-    }
-
-    /*==========================Remove Employee=========================*/
-    public Employee[] removeEmployee(UUID employeeID, Employee[] employeeArr) {
-        for (int i = 0; i < employeeArr.length; i++) { // goes through the array fed into method
-            if (employeeArr[i] == null) continue;
-            if (!employeeArr[i].getEmployeeID().equals(employeeID)) { //  it doesnt equal our employee to remove do nothing.
-                continue;
-            } else {
-                employeeArr[i] = null; // if it does have the employee we want to remove. (Ternary statement?)
-                i = employeeArr.length;
-            }
-        }
-
-        for (int j = 0; j < employeeArr.length-1; j++) { //runs through the array
-            if (employeeArr[j] !=(null) && employeeArr[j + 1] != null) { // position j != null && position j+1 != null
-                continue; //do nothing
-            } else if (employeeArr[j] == (null) && employeeArr[j + 1] != null) { // position j = null && position j+1 !=null
-                employeeArr[j] = employeeArr[j + 1]; // position j = position j + 1\
-                employeeArr[j+1] = null;
-            } else {
-                j = employeeArr.length; // only other situation would be position j && j+1 == null which means the array has two nulls in a row
-            }
-        }
-
-        return employeeArr;
-    }
-
 }
 
 

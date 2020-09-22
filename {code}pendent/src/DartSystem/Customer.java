@@ -73,6 +73,15 @@ private Customer[] customerList={ new Customer("Vernita","hdkjn"),new Customer("
          }
         System.out.println("Customer added successfully :"+customerList[arrayCount].customerId+" :"+
                 customerList[arrayCount].firstName+" "+customerList[arrayCount].lastName);
+         System.out.print("If you ant to add another customer press '1': ");
+         int anotherEntry = newCustomer.nextInt();
+         if(anotherEntry==1) {
+             addCustomer();
+         } else {
+                 System.out.print("Invaid,customer can't be added");
+         }
+             newCustomer.close();
+
     }
 
 

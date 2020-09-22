@@ -77,19 +77,18 @@ public class Helper {
 //        return userPass;  // Output user input
 //    }
 
-    public String Authenticator(String password) { // authenticates passwords
-        String authCheck;
-        String enteredPassword = getInput("Enter your password: ");
+    public Boolean Authenticator(String password) { // authenticates passwords
+        Boolean authSuccess = false;
+        String enteredPassword = getInput("Please enter your password: ");
 
         // checks both the manager and the employee passwords to see if you entered correct
         // I think it will work but not 100% sure (D)
         if (password.equals(enteredPassword)) {
-            authCheck = "success";
+            authSuccess = Boolean.TRUE;
         } else {
-            authCheck = "nogood";
+            authSuccess = Boolean.FALSE;
         }
-
-        return authCheck;
+        return authSuccess;
     }
     /*======================Array Increment/Reformat=======================*/
     public Employee[] increaseEmployeeArr(Employee[] array) { //Employee[] arr is our throw away array to bridge data into Employee[] newEmployeeArr

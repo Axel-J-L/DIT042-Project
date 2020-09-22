@@ -50,5 +50,4 @@ public class EmployeeMenu {
             default -> System.out.println("no match");
         }
     }
-
 }

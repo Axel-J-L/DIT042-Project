@@ -77,18 +77,9 @@ public class Helper {
 //        return userPass;  // Output user input
 //    }
 
-    public Boolean Authenticator(String password) { // authenticates passwords
-        Boolean authSuccess = false;
-        String enteredPassword = getInput("Please enter your password: ");
-
-        // checks both the manager and the employee passwords to see if you entered correct
-        // I think it will work but not 100% sure (D)
-        if (password.equals(enteredPassword)) {
-            authSuccess = Boolean.TRUE;
-        } else {
-            authSuccess = Boolean.FALSE;
-        }
-        return authSuccess;
+    public boolean authenticate(String password) { // authenticates passwords
+        String enteredPassword = getInput("Enter your password: ");
+        return password.equals(enteredPassword);
     }
     /*======================Array Increment/Reformat=======================*/
     public Employee[] increaseEmployeeArr(Employee[] array) { //Employee[] arr is our throw away array to bridge data into Employee[] newEmployeeArr
@@ -113,5 +104,4 @@ public class Helper {
         return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
     }
 }
-
 

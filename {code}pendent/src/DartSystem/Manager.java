@@ -21,20 +21,26 @@ public class Manager {
         switch(mInput.toLowerCase())
         {
             case "1":
-                System.out.println("Let's add and employee!!!"); //testing manager menu
+                System.out.println("Let's add and employee!!!"); //testing manager
+                // cant actually add an employee because we
+                // just created a new employee here that has an empty array.
                 Employee addEmployee = new Employee();
-                addEmployee.addNewEmployee();
+                addEmployee.addEmployee();
                 Manager.managerMenu();
                 break;
             case "2":
                 System.out.println("Remove an employee");
+                // cant actually remove an employee because we
+                // just created a new employee here that has an empty array.
                 Employee removeOne = new Employee();
-                removeOne.removeEmployee();
+                removeOne.removeEmployee(removeOne.getEmployeeID());
                 Manager.managerMenu();
                 break;
             case "3":
                 System.out.println("Let's view all employee");
                 Employee viewEmployees = new Employee();
+                // cant display all employees because your calling an employee who
+                // doesnt have anything in their array because you just created here...
                 viewEmployees.viewEmployees();
                 Manager.managerMenu();
                 break;
@@ -52,7 +58,7 @@ public class Manager {
     public static void authManager() {
             String password = "admin1234";
             Helper Authorize = new Helper();
-            Boolean authSuccess = Authorize.Authenticator(password);
+            Boolean authSuccess = Authorize.authenticate(password);
 
         if ( authSuccess ) {
             Manager mngr5 = new Manager();

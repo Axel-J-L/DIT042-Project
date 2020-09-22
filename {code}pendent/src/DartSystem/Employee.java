@@ -1,4 +1,5 @@
 package DartSystem;
+import java.time.Year;
 import java.util.*;
 
 public class Employee {
@@ -8,99 +9,132 @@ public class Employee {
     private int birthYear;
     private String address;
     private double grossSalary;
+    private final int INITIAL_ARRAY_SIZE = 4;
+    private Employee[] employees =  new Employee[INITIAL_ARRAY_SIZE];
 
-    private final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 
-    // Sample default array of objects to initiate Employees
-    private static Employee[] employees = {
-            new Employee("Andy", 1991, "Northside Rd 250", 200000),
-            new Employee("Robert", 1984, "Lync St 1200", 150000),
-            new Employee("Danny", 1983, "Maple Ave 110", 140000),
-            new Employee("Daniel", 1996, "Northside Rd 250", 90000),
-            new Employee("Jack", 1992, "Northside Rd 250", 160000),
-            new Employee("Jill", 1981, "Pimmit Dr 2311", 210000)};
+    private final double MIN_SALARY=100000.00;
+    private final double  BONUS_LOW=4000.00;
+    private final double BONUS_MEDIUM=6000.00;
+    private final double BONUS_HIGH=7500.00;
 
-    Employee() {
+    Helper helper = new Helper();
+
+    public Employee(){
+
     }
 
-    Employee(String name, int birthYear, String address, double salary) {
-        this.employeeID = UUID.randomUUID();
+    public Employee(String name, int birthYear, String address, double salary) {
         this.name = name;
+        this.grossSalary = salary;
         this.birthYear = birthYear;
         this.address = address;
-        this.grossSalary = salary;
+        this.employeeID = genEmployeeUUID();
+
     }
 
     /*==========================Add Employee=========================*/
+// this is how i think it should be done... -(D) but in a different class that is actually responsible for keep track of employees...
+//        public Employee[] addEmployee(Employee employee, Employee[] employeeArr) {
+//            for (int i = 0; i < employeeArr.length; i++) {
+//                if (employeeArr[i] != null) {
+//                    continue;
+//                } else {
+//                    employeeArr[i] = employee;
+//                    i = employeeArr.length;
+//                    //break; // I WILL FIGHT YOU
+//                }
+//            }
+//            return employeeArr;
+//        }
 
-    public void addNewEmployee() {
-        // TODO make not static
-        Scanner getInput = new Scanner(System.in);
+    public void addEmployee() {
 
         System.out.print("Enter new employee's name: ");
-        String newEmployeeName = getInput.nextLine();
+        String name = helper.input.nextLine();
 
         System.out.print("Enter new employee's year of birth: ");
-        int newEmployeeBirthYear = getInput.nextInt();
-        getInput.nextLine();
+        int birthYear = helper.input.nextInt();
+        helper.input.nextLine();
 
         System.out.print("Enter new employee's address: ");
-        String newEmployeeAddress = getInput.nextLine();
+        String address = helper.input.nextLine();
 
         System.out.print("Enter new employee's gross salary: ");
-        double newEmployeeSalary = getInput.nextDouble();
-        getInput.nextLine();
-
-        Employee[] employeesNew = new Employee[employees.length + (employees.length/2)];
-
+        double salary = helper.input.nextDouble();
+        helper.input.nextLine();
         for (int i = 0; i < employees.length; i++) {
-            employeesNew[i] = employees[i];
+            if (employees[i] != null) {
+                continue;
+            } else {
+                employees[i] = new Employee(name, birthYear, address, salary);
+                System.out.println(employees[i].toString());
+                i = employees.length;
+                //break; // I WILL FIGHT YOU
+            }
         }
-        employeesNew[employees.length] = new Employee(newEmployeeName, newEmployeeBirthYear, newEmployeeAddress, newEmployeeSalary);
-
-        employees = employeesNew;
-
-        int countArray = 0;
-        for (int i = 0; employees[i] != null; i++){
-            countArray = i;
-        }
-
-        System.out.println("Employee added successfully : " + "\n" + employees[countArray].employeeID + " : " + employees[countArray].name + " - " + employees[countArray].birthYear + " ( " + (currentYear - employees[countArray].birthYear) + " ): " + employees[countArray].grossSalary + " SEK.");
-
     }
 
 
+
     /*==========================Remove Employee=========================*/
-    public void removeEmployee() {
+//                Once again this is how i believe it should be done but in a different class (cough cough manager cough cough)
+//                public Employee[] removeEmployee (UUID employeeID, Employee[]employeeArr){
+//                    for (int i = 0; i < employeeArr.length; i++) { // goes through the array fed into method
+//                        if (employeeArr[i] == null) continue;
+//                        if (!employeeArr[i].getEmployeeID().equals(employeeID)) { //  it doesnt equal our employee to remove do nothing.
+//                            continue;
+//                        } else {
+//                            employeeArr[i] = null; // if it does have the employee we want to remove. (Ternary statement?)
+//                            i = employeeArr.length;
+//                        }
+//                    }
+//
+//                    for (int j = 0; j < employeeArr.length - 1; j++) { //runs through the array
+//                        if (employeeArr[j] != (null) && employeeArr[j + 1] != null) { // position j != null && position j+1 != null
+//                            continue; //do nothing
+//                        } else if (employeeArr[j] == (null) && employeeArr[j + 1] != null) { // position j = null && position j+1 !=null
+//                            employeeArr[j] = employeeArr[j + 1]; // position j = position j + 1\
+//                            employeeArr[j + 1] = null;
+//                        } else {
+//                            j = employeeArr.length; // only other situation would be position j && j+1 == null which means the array has two nulls in a row
+//                        }
+//                    }
+//
+//                    return employeeArr;
+//                }
 
-        viewEmployees();
 
-        Scanner getInput = new Scanner(System.in);
-        System.out.print("Please enter employee UUID to remove: ");
-        String idStringToRemove = getInput.nextLine();
-        UUID idToRemove = UUID.fromString(idStringToRemove);
-
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i].employeeID.equals(idToRemove)) {
-                for (int j = i + 1; j < employees.length + 1; j++) {
-                    if (i == employees.length - 1) {
-                        employees[i] = null;
-                    } else {
-                        employees[i] = employees[j];
-                        i++;
-                    }
-                }
+    public Employee[] removeEmployee(UUID employeeID) {
+        for (int i = 0; i < employees.length; i++) { // goes through the array fed into method
+            if (employees[i] == null) continue;
+            if (!employees[i].getEmployeeID().equals(employeeID)) { //  it doesnt equal our employee to remove do nothing.
+                continue;
+            } else {
+                employees[i] = null; // if it does have the employee we want to remove. (Ternary statement?)
+                i = employees.length;
             }
         }
 
-        viewEmployees();
+        for (int j = 0; j < employees.length - 1; j++) { //runs through the array
+            if (employees[j] != (null) && employees[j + 1] != null) { // position j != null && position j+1 != null
+                continue; //do nothing
+            } else if (employees[j] == (null) && employees[j + 1] != null) { // position j = null && position j+1 !=null
+                employees[j] = employees[j + 1]; // position j = position j + 1\
+                employees[j + 1] = null;
+            } else {
+                j = employees.length; // only other situation would be position j && j+1 == null which means the array has two nulls in a row
+            }
+        }
+
+        return employees;
     }
 
     public static void authEmployee() {
         // TODO get fully fuctioning with no errors (see above comments)
         String password = "password123";
         Helper Authorize = new Helper();
-        Boolean authSuccess = Authorize.Authenticator(password);
+        Boolean authSuccess = Authorize.authenticate(password);
 
         if (authSuccess) {
             EmployeeMenu.employeeMenu();
@@ -111,41 +145,50 @@ public class Employee {
         }
     }
 
+    // getters
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public double getSalary() {
-        return this.grossSalary;
+        return grossSalary;
     }
 
     public int getBirthYear() {
-        return this.birthYear;
+        return birthYear;
     }
 
     public String getAddress() {
-        return this.address;
+        return address;
     }
 
     public UUID getEmployeeID() {
-        return this.employeeID;
+        return employeeID;
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
     }
 
     private UUID genEmployeeUUID() {
         return UUID.randomUUID();
     }
 
+    public String toString() {
+        return " => Name: " + this.name + " => UUID: " + this.employeeID + "\n*---*\n";
+    }
+
+
     public void viewEmployees() {
-        System.out.println("Employees:");
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                System.out.println(employees[i].employeeID + " : " + employees[i].name + " - " + employees[i].birthYear + " ( " + (currentYear - employees[i].birthYear) + " ): " + employees[i].grossSalary + " SEK.");
-            }
+        System.out.println("These are all the employees: ");
+        for (Employee employee : employees) {
+            if (employee == null) return;
+            System.out.println(employee.toString());
         }
     }
 
 
-    /*public void calculateSalary() {
+    public void salary() {
         Helper input = new Helper();
         String askBirthYear = "Employee birth year: ";
         this.birthYear = input.getInt(askBirthYear);
@@ -154,34 +197,31 @@ public class Employee {
         double netSalary = 0;
 
 
-       //public static final double MIN_SALARY=100000.00;
+        //public static final double MIN_SALARY=100000.00;
+        if (grossSalary < MIN_SALARY) {
+            netSalary = grossSalary;
 
-        double minTaxableSalary = 100000;
-
-        if(grossSalary<minTaxableSalary) {
-            netSalary=grossSalary;
-
-        } else  {
-            if (grossSalary>=minTaxableSalary) {
+        } else {
+            if (grossSalary >= MIN_SALARY) {
                 netSalary = grossSalary - ((30.0 / 100) * grossSalary);
             }
         }
         double bonus;
-        if(age<22) { // change to not be magic numbers instead constant - (n)
-            bonus = 4000;
+        if (age < 22) { // change to not be magic numbers instead constant - (n)
+            bonus = BONUS_LOW;
             netSalary = netSalary + bonus;
-            System.out.print("Employee's net salary with bonus :"+netSalary);
-        }else
-        if(age==22&&age<30){ // change to not be magic numbers instead constant - (n)
-            bonus=6000;
-            netSalary=netSalary+bonus;
-            System.out.print("Employee's net salary with bonus :"+netSalary);
-        }else
-        if(age>30) { // change to not be magic numbers instead constant - (n)
-            bonus = 7500;
+            System.out.print("Employee's net salary with bonus :" + netSalary);
+        } else if (age == 22 && age < 30) { // change to not be magic numbers instead constant - (n)
+            bonus = BONUS_MEDIUM;
             netSalary = netSalary + bonus;
-            System.out.print("Employee's net salary with bonus :"+netSalary);
+            System.out.print("Employee's net salary with bonus :" + netSalary);
+        } else if (age > 30) { // change to not be magic numbers instead constant - (n)
+            bonus = BONUS_HIGH;
+            netSalary = netSalary + bonus;
+            System.out.print("Employee's net salary with bonus :" + netSalary);
         }
-    }*/
 
+    }
 }
+
+

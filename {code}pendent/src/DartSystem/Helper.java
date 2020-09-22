@@ -77,25 +77,15 @@ public class Helper {
 //        return userPass;  // Output user input
 //    }
 
-    public String Authenticator(String password) { // authenticates passwords
-        String authCheck;
+    public boolean authenticate(String password) { // authenticates passwords
         String enteredPassword = getInput("Enter your password: ");
-
-        // checks both the manager and the employee passwords to see if you entered correct
-        // I think it will work but not 100% sure (D)
-        if (password.equals(enteredPassword)) {
-            authCheck = "success";
-        } else {
-            authCheck = "nogood";
-        }
-
-        return authCheck;
+        return password.equals(enteredPassword);
     }
-    /*======================Array Increment/Decrement=======================*/
+    /*======================Array Increment/Reformat=======================*/
     public Employee[] increaseEmployeeArr(Employee[] array) { //Employee[] arr is our throw away array to bridge data into Employee[] newEmployeeArr
         Employee[] newEmployeeArr = new Employee[(int) (array.length * 1.5)]; // creates a new array that is larger then the array you feed into the method of 1.5
         for (int i = 0; i < array.length; i++) { // loops for copying.
-            newEmployeeArr[i] = array[i]; // copys the information from fed in array to newEmployee array
+            newEmployeeArr[i] = array[i]; // copy's the information from fed in array to newEmployee array
         }
         return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
     }
@@ -112,8 +102,6 @@ public class Helper {
             newEmployeeArr[i] = array[i]; // copys the information from fed in array to newEmployee array
         }
         return newEmployeeArr; // returns our new and fancy larger array with same values as the one fed into the method
-
     }
 }
-
 

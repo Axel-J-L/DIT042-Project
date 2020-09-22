@@ -54,6 +54,34 @@ private Customer[] customerList={ new Customer("Vernita","hdkjn"),new Customer("
     public void addCustomer() {
         // TODO make not static
         System.out.println("Add a customer here");
+        Scanner newCustomer=new Scanner(System.in);
+        System.out.print("Enter the customers first name: ");
+        String cusFirstName=newCustomer.nextLine();
+        System.out.print("Enter the customers last name: ");
+        String cusLastName=newCustomer.nextLine();
+
+        Customer[]customerListNew=new Customer[customerList.length+(customerList.length/2)];
+         for(int i=0;i<customerList.length;i++){
+             customerListNew[i]=customerList[i];
+         }
+         customerListNew[customerList.length]=new Customer(cusFirstName,cusLastName);
+         customerList=customerListNew;
+
+         int arrayCount=0;
+         for(int i=0;customerList[i] != null;i++){
+             arrayCount=i;
+         }
+        System.out.println("Customer added successfully :"+customerList[arrayCount].customerId+" :"+
+                customerList[arrayCount].firstName+" "+customerList[arrayCount].lastName);
+         System.out.print("If you ant to add another customer press '1': ");
+         int anotherEntry = newCustomer.nextInt();
+         if(anotherEntry==1) {
+             addCustomer();
+         } else {
+                 System.out.print("Invaid,customer can't be added");
+         }
+             newCustomer.close();
+
     }
 
 
